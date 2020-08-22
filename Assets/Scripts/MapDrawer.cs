@@ -7,8 +7,9 @@ public class MapDrawer : MonoBehaviour
 {
     public Tilemap TilemapDirt;
     public Tilemap TilemapGrass;
+    public Tilemap TilemapGrassCorner;
     public Tilemap TilemapFlowers;
-    public Tile DirtTile;
+    public TileSet TileSet;
     void Start()
     {
 
@@ -22,6 +23,9 @@ public class MapDrawer : MonoBehaviour
     {
         //Debug.Log("Want to draw map of size:" + map.SizeX + "/" + map.SizeY);
         TilemapDirt.ClearAllTiles();
+        TilemapGrass.ClearAllTiles();
+        TilemapGrassCorner.ClearAllTiles();
+        TilemapFlowers.ClearAllTiles();
 
         Vector3Int pos = new Vector3Int();
         for (int x = 0; x < map.SizeX; x++)
@@ -30,12 +34,13 @@ public class MapDrawer : MonoBehaviour
             for (int y = 0; y < map.SizeY; y++)
             {
                 pos.y = y;
-                TilemapDirt.SetTile(pos, DirtTile);
+
+                TilemapDirt.SetTile(pos, TileSet.Tiles[0]);
+
                 MapTile tile = map.Tiles[x,y];
                 if (tile.Type == MapTile.TileType.Grass)
                 {
-                    TilemapDirt.SetTile(pos, null); //temp
-                    //TilemapGrass.SetTile(pos, GrassTile);
+                    TilemapGrass.SetTile(pos, TileSet.Tiles[1]);
                 }
             }
         }

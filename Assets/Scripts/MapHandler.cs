@@ -12,7 +12,7 @@ public class MapHandler : MonoBehaviour
     {
         map = new Map((int)MapSize.x, (int)MapSize.y);
         mapDrawer = GetComponent<MapDrawer>();
-
+        
          mapDrawer.DrawMap(map);
     }
 
