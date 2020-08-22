@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: redFlowerUnlock
   m_EditorClassIdentifier: Assembly-CSharp::Buyable
-  id: 
-  displayname: 
-  price: 0
-  icon: {fileID: 0}
+  id: redflowerunlock
+  displayname: Unlock
+  price: 100
+  icon: {fileID: 2627795705795029295, guid: 68e9b3ed49b61104b95b117bf6607dd3, type: 3}

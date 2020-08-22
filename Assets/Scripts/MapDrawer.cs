@@ -26,7 +26,7 @@ public class MapDrawer : MonoBehaviour
     }
     private MapTile.TileType GetTileType(Map map, int x, int y)
     {
-        if (x < 0 || y < 0 || x > map.SizeX || y > map.SizeY)
+        if (x < 0 || y < 0 || x >= map.SizeX || y >= map.SizeY)
         {
             //Debug.Log("Invalid coords: " + x + "/" + y);
             return MapTile.TileType.None;
