@@ -105,6 +105,26 @@ public class MapDrawer : MonoBehaviour
                         TilemapGrass.SetTile(pos, TileSet.Tiles[setIndex]);
                     }
                 }
+
+                if (tile.Flower != null)
+                {
+                    if (tile.Flower.Type == Flower.FlowerType.Yellow)
+                    {
+                        TilemapFlowers.SetTile(pos, TileSet.Tiles[21]);
+                    }
+                    else if (tile.Flower.Type == Flower.FlowerType.Red)
+                    {
+                        TilemapFlowers.SetTile(pos, TileSet.Tiles[18]);
+                    }
+                    else if (tile.Flower.Type == Flower.FlowerType.Green)
+                    {
+                        TilemapFlowers.SetTile(pos, TileSet.Tiles[19]);
+                    }
+                    else if (tile.Flower.Type == Flower.FlowerType.Blue)
+                    {
+                        TilemapFlowers.SetTile(pos, TileSet.Tiles[20]);
+                    }
+                }
             }
         }
 
