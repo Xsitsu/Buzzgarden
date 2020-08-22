@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Map
 {
-    Tile[,] tiles;
+    public int SizeX;
+    public int SizeY;
+    public Tile[,] tiles;
 
     public Map(int size_x, int size_y)
     {
+        SizeX = size_x;
+        SizeY = size_y;
         tiles = new Tile[size_x, size_y];
     }
     public Map() : this(0, 0) {}
