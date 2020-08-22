@@ -31,6 +31,12 @@ public class MapDrawer : MonoBehaviour
             {
                 pos.y = y;
                 TilemapDirt.SetTile(pos, DirtTile);
+                MapTile tile = map.Tiles[x,y];
+                if (tile.Type == MapTile.TileType.Grass)
+                {
+                    TilemapDirt.SetTile(pos, null); //temp
+                    //TilemapGrass.SetTile(pos, GrassTile);
+                }
             }
         }
 

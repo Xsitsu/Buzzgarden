@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class MapTile
 {
-    public enum Type { None, Grass, Dirt }
+    public enum TileType { None, Grass, Dirt }
 
-    public MapTile.Type type;
-    public Flower flower;
+    public MapTile.TileType Type;
+    public Flower Flower;
     public MapTile()
     {
-        type = MapTile.Type.None;
-        flower = null;
+        Type = MapTile.TileType.None;
+        Flower = null;
     }
 
-    public MapTile(MapTile.Type type)
+    public MapTile(MapTile.TileType type)
     {
-        this.type = type;
+        this.Type = type;
     }
-    public MapTile(MapTile.Type type, Flower flower)
+    public MapTile(MapTile.TileType type, Flower flower)
     {
-        this.type = type;
-        this.flower = flower;
+        this.Type = type;
+        this.Flower = flower;
     }
 }
