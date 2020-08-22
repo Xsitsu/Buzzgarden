@@ -11,12 +11,12 @@ public class CharacterController : MonoBehaviour
 
 	Camera cam;
 
-	public void Start()
+	void Start()
 	{
 		cam = Camera.main;
 	}
 
-	public void Update()
+	void Update()
 	{
 		Vector3 vel = new Vector3();
 		if (Input.GetKey("w"))
@@ -37,11 +37,6 @@ public class CharacterController : MonoBehaviour
 		}
 
 		Transform transform = GetComponent<Transform>();
-		Transform camTransform = cam.GetComponent<Transform>();
-
-		Vector3 pos = new Vector3(transform.position.x, transform.position.y, camTransform.position.z);
-		camTransform.position = pos;
-
 		vel = vel.normalized * Speed;
 		transform.position += vel * Time.deltaTime;
 	}
