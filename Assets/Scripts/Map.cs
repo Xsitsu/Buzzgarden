@@ -14,15 +14,19 @@ public class Map
         SizeY = size_y;
         Tiles = new MapTile[size_x, size_y];
         
+        System.Random rand = new System.Random();
+
         //temp
         for (int x = 0; x < size_x; x++)
         {
             for (int y = 0; y < size_y; y++)
             {
-                Tiles[x,y] = new MapTile();
-                if (x == y)
+                Tiles[x,y] = new MapTile(MapTile.TileType.Grass);
+
+                int val = rand.Next(1, 3);
+                if (val == 1)
                 {
-                    Tiles[x,y].Type = MapTile.TileType.Grass;
+                    Tiles[x,y].Type = MapTile.TileType.Dirt;
                 }
             }
         }
