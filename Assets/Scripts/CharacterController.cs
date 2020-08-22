@@ -7,6 +7,7 @@ public class CharacterController : MonoBehaviour
 {
 	[Range(1, 20)]
 	public float Speed = 1f; // tiles per second (or something idk)
+    public Grid grid;
 
 	Camera cam;
 
