@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
-	private Inventory _instance;
-	public Inventory Instance { get { return _instance; } }
+	private PlayerInventory _instance;
+	public PlayerInventory Instance { get { return _instance; } }
 
 	public uint pollen = 0;
 

@@ -31,6 +31,3 @@ public class MapHandler : MonoBehaviour
 		return mapRect.Contains(check);
 	}
 }
-
-	}
-}

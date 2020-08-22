@@ -5,7 +5,7 @@ using UnityEngine;
 public class BuyableController : MonoBehaviour
 {
 	public Buyable item;
-	public Inventory inventory;
+	public PlayerInventory inventory;
 
 	public void Buy()
 	{
