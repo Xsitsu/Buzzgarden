@@ -7,6 +7,7 @@ public class Buyable : ScriptableObject
 {
 	public string id;
 	public string displayname;
+	public string hovertext;
 	public uint price;
 	public Sprite sprite;
 }

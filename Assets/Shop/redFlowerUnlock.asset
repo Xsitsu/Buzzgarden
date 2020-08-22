@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 343f4dc6a2a1c714c94a8b6b39a851ad, type: 3}
   m_Name: redFlowerUnlock
   m_EditorClassIdentifier: 
-  id: redflowerunlock
+  id: redflower
   displayname: Seeds
+  hovertext: Red Flower Seeds
   price: 100
   sprite: {fileID: 2627795705795029295, guid: 68e9b3ed49b61104b95b117bf6607dd3, type: 3}
