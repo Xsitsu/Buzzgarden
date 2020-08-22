@@ -2,23 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile
+public class MapTile
 {
-    public enum TileType { None, Grass, Dirt }
+    public enum Type { None, Grass, Dirt }
 
-    public TileType type;
+    public MapTile.Type type;
     public Flower flower;
-    public Tile()
+    public MapTile()
     {
-        type = TileType.None;
+        type = MapTile.Type.None;
         flower = null;
     }
 
-    public Tile(TileType type)
+    public MapTile(MapTile.Type type)
     {
         this.type = type;
     }
-    public Tile(TileType type, Flower flower)
+    public MapTile(MapTile.Type type, Flower flower)
     {
         this.type = type;
         this.flower = flower;
