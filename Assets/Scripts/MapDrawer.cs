@@ -8,6 +8,7 @@ public class MapDrawer : MonoBehaviour
     public Tilemap TilemapDirt;
     public Tilemap TilemapGrass;
     public Tilemap TilemapFlowers;
+    public Tile DirtTile;
     void Start()
     {
 
@@ -29,7 +30,7 @@ public class MapDrawer : MonoBehaviour
             for (int y = 0; y < map.SizeY; y++)
             {
                 pos.y = y;
-                //TilemapDirt.SetTile(pos, DirtTile);
+                TilemapDirt.SetTile(pos, DirtTile);
             }
         }
 

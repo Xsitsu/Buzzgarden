@@ -204,7 +204,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1826729452
+--- !u!1001 &1226762919
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -214,17 +214,17 @@ PrefabInstance:
     - target: {fileID: 7288923661884119944, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.027176
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7288923661884119944, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.148827
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7288923661884119944, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -391.8166
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7288923661884119944, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8,
         type: 3}
@@ -270,16 +270,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameWorld
-      objectReference: {fileID: 0}
-    - target: {fileID: 8993901579187300491, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8,
-        type: 3}
-      propertyPath: MapSize.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8993901579187300491, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8,
-        type: 3}
-      propertyPath: MapSize.y
-      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fdfa53395afc0b4ba9e1baa34a24ef8, type: 3}

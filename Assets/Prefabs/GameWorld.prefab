@@ -423,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7288923661884119946}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.027176, y: 16.148827, z: -391.8166}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 228730662025813977}
@@ -445,6 +445,7 @@ MonoBehaviour:
   TilemapDirt: {fileID: 254066620649414754}
   TilemapGrass: {fileID: 8813723602602615629}
   TilemapFlowers: {fileID: 988905372542726018}
+  DirtTile: {fileID: 11400000, guid: ad768583194b1ce48ba10f60dd537c16, type: 2}
 --- !u!114 &8993901579187300491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,4 +458,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af939ac9186bf0e40ad0df73a0bcdc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapSize: {x: 20, y: 20}
+  MapSize: {x: 40, y: 40}
