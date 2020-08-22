@@ -8,5 +8,5 @@ public class Buyable : ScriptableObject
 	public string id;
 	public string displayname;
 	public uint price;
-	public Sprite icon;
+	public Sprite sprite;
 }
