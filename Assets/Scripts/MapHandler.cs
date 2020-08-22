@@ -5,20 +5,19 @@ using UnityEngine;
 [RequireComponent(typeof(MapDrawer))]
 public class MapHandler : MonoBehaviour
 {
-    public Vector2 MapSize; 
-    private Map map;
-    private MapDrawer mapDrawer;
-    void Start()
-    {
-        map = new Map((int)MapSize.x, (int)MapSize.y);
-        mapDrawer = GetComponent<MapDrawer>();
-        
-         mapDrawer.DrawMap(map);
-    }
+	public Vector2 MapSize;
+	private Map map;
+	private MapDrawer mapDrawer;
+	void Start()
+	{
+		map = new Map((int)MapSize.x, (int)MapSize.y);
+		mapDrawer = GetComponent<MapDrawer>();
 
-    void Update()
-    {
-       
-    }
+		mapDrawer.DrawMap(map);
+	}
+
+	void Update()
+	{
+
+	}
 }
-

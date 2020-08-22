@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-[CreateAssetMenu(fileName = "TilSet", menuName = "FlowerGame/TileSet")]
+[CreateAssetMenu(fileName = "TileSet", menuName = "FlowerGame/TileSet")]
 public class TileSet : ScriptableObject
 {
-    public Tile[] Tiles;
+	public Tile[] Tiles;
 }
