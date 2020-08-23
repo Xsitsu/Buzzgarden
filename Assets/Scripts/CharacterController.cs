@@ -88,16 +88,8 @@ public class CharacterController : MonoBehaviour
 			{
 				if (tile != null && tile.Flower != null)
 				{
-					tile.Flower.pollenParticles.Play();
 					float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
 					PlayerInventory.Instance.AddPollen(harvested);
-				}
-			}
-			else
-			{
-				if (tile != null && tile.Flower != null)
-				{
-					tile.Flower.pollenParticles.Stop();
 				}
 			}
 		}

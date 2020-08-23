@@ -31,7 +31,6 @@ public class Flower
 
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
 		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
-		pollenParticles.Stop();
 	}
 
 	public void Destroy()
@@ -60,6 +59,7 @@ public class Flower
 			float addPollen = PollenRate * step;
 			Pollen += addPollen;
 			TotalPollen += addPollen;
+
 			if (Pollen > MaxPollen)
 			{
 				Pollen = MaxPollen;
@@ -96,6 +96,8 @@ public class Flower
 		{
 			Pollen -= amount;
 		}
+
+		pollenParticles.Emit(1);
 		return harvested;
 	}
 }
