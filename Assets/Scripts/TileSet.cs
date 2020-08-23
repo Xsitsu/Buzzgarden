@@ -9,5 +9,6 @@ public class TileSet : ScriptableObject
 	public Tile DirtTile;
 	public Tile GrassTile;
 	public Tile FlowerTile;
+	public Tile FlowerPetalsTile;
 	public Tile[] BorderTiles;
 }

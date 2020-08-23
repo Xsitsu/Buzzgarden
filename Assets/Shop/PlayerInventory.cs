@@ -16,14 +16,17 @@ public class PlayerInventory : MonoBehaviour
 	{
 		_instance = this;
 	}
+
 	void Start()
 	{
 		items = new Dictionary<string, int>();
 	}
+
 	void OnDestroy()
 	{
 		_instance = null;
 	}
+
 	public void AddItem(string id)
 	{
 		int itemCount;
@@ -32,10 +35,12 @@ public class PlayerInventory : MonoBehaviour
 
 		Debug.Log("Inventory now has " + itemCount + " of '" + id + "'.");
 	}
+
 	public void AddPollen(float amount)
 	{
 		pollen += amount;
 	}
+
 	public void SubtractPollen(float amount)
 	{
 		pollen -= amount;

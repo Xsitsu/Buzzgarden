@@ -13,7 +13,7 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 	public TMPro.TextMeshProUGUI itemPrice;
 	public TMPro.TextMeshProUGUI currentPollen;
 
-	public void Start()
+	void Start()
 	{
 		Image image = GetComponentsInChildren<Image>()[1];
 		Text text = GetComponentInChildren<Text>();
@@ -25,7 +25,8 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 		itemPrice.text = "Price: 0 pollen";
 		currentPollen.text = "You have: " + inventory.Pollen.ToString() + " pollen";
 	}
-	public void Update()
+
+	void Update()
 	{
 		currentPollen.text = "You have: " + inventory.Pollen.ToString() + " pollen";
 	}

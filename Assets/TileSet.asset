@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DirtTile: {fileID: 11400000, guid: a195d455c7c15ad45a840152fff548f6, type: 2}
   GrassTile: {fileID: 11400000, guid: 69adbd46b1e6ac8488273354652ec137, type: 2}
-  FlowerTile: {fileID: 11400000, guid: a7632800fdddaed4cbab6baec5460f6e, type: 2}
+  FlowerTile: {fileID: 11400000, guid: c310ab1df1f73a84f8c824f3fcc32d97, type: 2}
+  FlowerPetalsTile: {fileID: 11400000, guid: 243231d5ee91dee439794885f71dc3e6, type: 2}
   BorderTiles:
   - {fileID: 0}
   - {fileID: 11400000, guid: 0ab9b19a34b803f438bff362b28578bb, type: 2}
