@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: f1016857a780ad44d98960324efc4c76
+guid: 54fdc73d77fdd35469b8572a462a63d9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5425543924475650158
-    second: tileset_ground16_hacks_0
+      213: -9160163874771889814
+    second: tileset_ground16_composites_0
   - first:
-      213: 7800512208581912309
-    second: tileset_ground16_hacks_1
+      213: -64675237939578113
+    second: tileset_ground16_composites_1
   - first:
-      213: 5699140410005837970
-    second: tileset_ground16_hacks_2
+      213: -5885452917952307521
+    second: tileset_ground16_composites_2
   - first:
-      213: 4620403714804854775
-    second: tileset_ground16_hacks_3
+      213: -2718985192380311910
+    second: tileset_ground16_composites_3
   - first:
-      213: 288276270363705223
-    second: tileset_ground16_hacks_4
+      213: 2605777855623419359
+    second: tileset_ground16_composites_4
   - first:
-      213: 1788840360470097764
-    second: tileset_ground16_hacks_5
+      213: 5144269380904080366
+    second: tileset_ground16_composites_5
+  - first:
+      213: -4552080975014555799
+    second: tileset_ground16_composites_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tileset_ground16_hacks_0
+      name: tileset_ground16_composites_0
       rect:
         serializedVersion: 2
         x: 16
@@ -119,14 +122,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6066ab14776b4b40800000000000000
-      internalID: 5425543924475650158
+      spriteID: a611bdf0d7f80e080800000000000000
+      internalID: -9160163874771889814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_ground16_hacks_1
+      name: tileset_ground16_composites_1
       rect:
         serializedVersion: 2
         x: 48
@@ -140,14 +143,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f66f9a568cf04c60800000000000000
-      internalID: 7800512208581912309
+      spriteID: ffaf8d8b63a3a1ff0800000000000000
+      internalID: -64675237939578113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_ground16_hacks_2
+      name: tileset_ground16_composites_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe9a2be0cba25ea0800000000000000
+      internalID: -5885452917952307521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tileset_ground16_composites_3
       rect:
         serializedVersion: 2
         x: 16
@@ -161,14 +185,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 298d87fe10a671f40800000000000000
-      internalID: 5699140410005837970
+      spriteID: a96df929f59344ad0800000000000000
+      internalID: -2718985192380311910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_ground16_hacks_3
+      name: tileset_ground16_composites_4
       rect:
         serializedVersion: 2
         x: 48
@@ -182,14 +206,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ffa6dbd2b8fe1040800000000000000
-      internalID: 4620403714804854775
+      spriteID: fd553085725992420800000000000000
+      internalID: 2605777855623419359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_ground16_hacks_4
+      name: tileset_ground16_composites_5
       rect:
         serializedVersion: 2
         x: 16
@@ -203,14 +227,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78ff3349db9200400800000000000000
-      internalID: 288276270363705223
+      spriteID: ee3d4b51fbd146740800000000000000
+      internalID: 5144269380904080366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tileset_ground16_hacks_5
+      name: tileset_ground16_composites_6
       rect:
         serializedVersion: 2
         x: 48
@@ -224,8 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46fa3b584dc33d810800000000000000
-      internalID: 1788840360470097764
+      spriteID: 96f817f9872c3d0c0800000000000000
+      internalID: -4552080975014555799
       vertices: []
       indices: 
       edges: []
