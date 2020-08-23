@@ -6,20 +6,25 @@ using UnityEngine.Tilemaps;
 
 public class TileSelector : MonoBehaviour
 {
+    static private TileSelector _instance;
+    static public TileSelector Instance { get { return _instance; } }
     public MapHandler mapHandler;
     public Grid grid;
     public Tilemap tilemap;
     public Tile selectionTile;
-
-    Vector3Int prevCell;
+    public Vector3Int SelectedCell { get; private set; }
 	Camera cam;
     Plane groundPlane;
 
+    void Awake()
+    {
+        _instance = this;
+    }
 	public void Start()
 	{
 		cam = Camera.main;
         groundPlane = new Plane(Vector3.up, Vector3.zero);
-        prevCell = new Vector3Int(0, -1, 0);
+        SelectedCell = new Vector3Int(0, -1, 0);
 	}
 
 	public void Update()
@@ -29,10 +34,10 @@ public class TileSelector : MonoBehaviour
         //cell.x = (int)Mathf.Clamp(cell.x, 0, mapHandler.MapSize.x);
         //cell.y = (int)Mathf.Clamp(cell.y, 0, mapHandler.MapSize.y);
 
-        if (prevCell != cell)
+        if (SelectedCell != cell)
         {
-            tilemap.SetTile(prevCell, null);
-            prevCell = cell;
+            tilemap.SetTile(SelectedCell, null);
+            SelectedCell = cell;
 
             if (mapHandler.ContainsCell(cell))
             {

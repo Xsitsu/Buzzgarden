@@ -5,11 +5,17 @@ using UnityEngine;
 [RequireComponent(typeof(MapDrawer))]
 public class MapHandler : MonoBehaviour
 {
+    static private MapHandler _instance;
+    static public MapHandler Instance { get { return _instance; } }
 	public Vector2 MapSize;
+    public Map Map { get { return map; } }
 	Map map;
 	MapDrawer mapDrawer;
 	Rect mapRect;
-
+    void Awake()
+    {
+        _instance = this;
+    }
 	void Start()
 	{
 		map = new Map((int)MapSize.x, (int)MapSize.y);

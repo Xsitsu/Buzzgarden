@@ -18,7 +18,7 @@ public class Flower
         Type = FlowerType.None;
         Pollen = 0;
         MaxPollen = 100;
-        PollenRate = 30;
+        PollenRate = 4;
 
         pollenBar = FlowerHandler.Instance.CreatePollenBar();
     }
@@ -47,9 +47,22 @@ public class Flower
             pollenBar.SetPercentage(Pollen / MaxPollen);
         }
     }
-
     public void SetPosition(int x, int y)
     {
         pollenBar.transform.position = new Vector3(x, y, 0);
+    }
+    public float HarvestPollen(float amount)
+    {
+        float harvested = amount;
+        if (Pollen < amount)
+        {
+            harvested = Pollen;
+            Pollen = 0;
+        }
+        else
+        {
+            Pollen -= amount;
+        }
+        return harvested;
     }
 }

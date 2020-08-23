@@ -63,6 +63,17 @@ public class Map
             }
         }
     }
+    public MapTile GetTileFromCell(Vector3Int cell)
+    {
+        int x = cell.x;
+        int y = cell.y;
+
+        if (x >= 0 && y >= 0 && x < SizeX && y < SizeY)
+        {
+            return Tiles[x,y];
+        }
+        return null;
+    }
     public List<Flower> GetFlowers()
     {
         List<Flower> flowers = new List<Flower>();

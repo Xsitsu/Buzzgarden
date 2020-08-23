@@ -6,8 +6,10 @@ using UnityEngine.EventSystems;
 public class CharacterController : MonoBehaviour
 {
 	[Range(1, 20)]
-	public float Speed = 1f; // tiles per second (or something idk)
+	public float Speed = 1f; // tiles per second
     public Grid grid;
+    public float PollenHarvestSpeed = 4f; // pollen per second
+    public float PollenHarvestDistance = 1f; // tiles
 
 	Camera cam;
 
@@ -39,5 +41,27 @@ public class CharacterController : MonoBehaviour
 		Transform transform = GetComponent<Transform>();
 		vel = vel.normalized * Speed;
 		transform.position += vel * Time.deltaTime;
+
+        if (Input.GetMouseButton(0))
+        {
+            Vector3Int cell = TileSelector.Instance.SelectedCell;
+
+            Vector2 diff = new Vector2((float)cell.x - transform.position.x, (float)cell.y - transform.position.y);
+            float dist = diff.magnitude;
+
+            if (dist <= PollenHarvestDistance)
+            {
+                MapTile tile = MapHandler.Instance.Map.GetTileFromCell(cell);
+                if (tile != null)
+                {
+                    if (tile.Flower != null)
+                    {
+                        float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
+                        // ToDo: Deal with type missmatch and give the appropriate amount
+                        PlayerInventory.Instance.pollen += 1;
+                    }
+                }
+            }
+        }
 	}
 }
