@@ -25,11 +25,11 @@ public class ParticleController : MonoBehaviour
 			ref var particle = ref particles[i];
 			var distance = Vector3.Distance(particle.position, Player.transform.position);
 
-			if (particle.remainingLifetime < 2)
+			if (particle.remainingLifetime < 2.5f)
 			{
 				if (distance >= 0.1f)
 				{
-					particle.position = Vector3.MoveTowards(particle.position, Player.transform.position, Time.deltaTime * 5);
+					particle.position = Vector3.MoveTowards(particle.position, Player.transform.position, Time.deltaTime * 8);
 				}
 				else
 				{
