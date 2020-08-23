@@ -21,6 +21,15 @@ public class CharacterController : MonoBehaviour
 	void Update()
 	{
 		Vector3 vel = new Vector3();
+        if (Input.GetKeyDown("a"))
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (Input.GetKeyDown("d"))
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
 		if (Input.GetKey("w"))
 		{
 			vel.y += 1;
