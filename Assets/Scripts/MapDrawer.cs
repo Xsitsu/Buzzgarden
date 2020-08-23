@@ -17,7 +17,7 @@ public class MapDrawer : MonoBehaviour
     public TileSet TileSet;
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -46,34 +46,11 @@ public class MapDrawer : MonoBehaviour
     }
     private int GrassBordersToIndex(bool up, bool down, bool left, bool right)
     {
-        /*
-        if (up && down && left && right) return 0; // no sprite yet
-        if (up && down && left && !right) return 12;
-        if (up && down && !left && right) return 13;
-        if (up && down && !left && !right) return 0; // no sprite yet
-        
-        if (up && !down && left && right) return 10;
-        if (up && !down && left && !right) return 2;
-        if (up && !down && !left && right) return 4;
-        if (up && !down && !left && !right) return 3;
-        
-        if (!up && down && left && right) return 11;
-        if (!up && down && left && !right) return 7;
-        if (!up && down && !left && right) return 9;
-        if (!up && down && !left && !right) return 8;
-        
-        if (!up && !down && left && right) return 0; // no sprite yet
-        if (!up && !down && left && !right) return 5;
-        if (!up && !down && !left && right) return 6;
-        if (!up && !down && !left && !right) return 0;
-        */
-
         int index = 0;
         if (right) { index += 1; }
         if (left) { index += 2; }
         if (down) { index += 4; }
         if (up) { index += 8; }
-
         return index;
     }
     public void DrawMap(Map map)
@@ -116,24 +93,23 @@ public class MapDrawer : MonoBehaviour
                 if (tile.Flower != null)
                 {
                     TilemapFlowers.SetTile(pos, TileSet.FlowerTile);
-                    /*
+                    TilemapFlowers.SetTileFlags(pos, TileFlags.None);
                     if (tile.Flower.Type == Flower.FlowerType.Yellow)
                     {
-                        TilemapFlowers.SetTile(pos, TileSet.Tiles[21]);
+                        TilemapFlowers.SetColor(pos, new Color(1f, 1f, 0f, 1f));
                     }
                     else if (tile.Flower.Type == Flower.FlowerType.Red)
                     {
-                        TilemapFlowers.SetTile(pos, TileSet.Tiles[18]);
+                        TilemapFlowers.SetColor(pos, new Color(1f, 0f, 0f, 1f));
                     }
                     else if (tile.Flower.Type == Flower.FlowerType.Green)
                     {
-                        TilemapFlowers.SetTile(pos, TileSet.Tiles[19]);
+                        TilemapFlowers.SetColor(pos, new Color(0f, 1f, 0f, 1f));
                     }
                     else if (tile.Flower.Type == Flower.FlowerType.Blue)
                     {
-                        TilemapFlowers.SetTile(pos, TileSet.Tiles[20]);
+                        TilemapFlowers.SetColor(pos, new Color(0f, 0f, 1f, 1f));
                     }
-                    */
                 }
             }
         }

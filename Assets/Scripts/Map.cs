@@ -44,7 +44,7 @@ public class Map
 
         tile = Tiles[SizeX/2,SizeY/2];
         flower = new Flower(tile);
-        flower.Type = Flower.FlowerType.Yellow;
+        flower.Type = Flower.FlowerType.Green;
         flower.SetPosition(SizeX/2, SizeY/2);
         tile.Type = MapTile.TileType.Grass;
         tile.Flower = flower;
