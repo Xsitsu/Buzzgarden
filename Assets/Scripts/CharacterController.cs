@@ -8,7 +8,7 @@ public class CharacterController : MonoBehaviour
 	[Range(1, 20)]
 	public float Speed = 1f; // tiles per second
     public Grid grid;
-    public float PollenHarvestSpeed = 4f; // pollen per second
+    public float PollenHarvestSpeed = 6f; // pollen per second
     public float PollenHarvestDistance = 1f; // tiles
 
 	Camera cam;
@@ -57,8 +57,7 @@ public class CharacterController : MonoBehaviour
                     if (tile.Flower != null)
                     {
                         float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
-                        // ToDo: Deal with type missmatch and give the appropriate amount
-                        PlayerInventory.Instance.pollen += 1;
+                        PlayerInventory.Instance.AddPollen(harvested);
                     }
                 }
             }

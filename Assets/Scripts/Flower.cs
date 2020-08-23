@@ -17,8 +17,8 @@ public class Flower
 
         Type = FlowerType.None;
         Pollen = 0;
-        MaxPollen = 100;
-        PollenRate = 4;
+        MaxPollen = 40;
+        PollenRate = 1;
 
         pollenBar = FlowerHandler.Instance.CreatePollenBar();
     }
@@ -40,12 +40,8 @@ public class Flower
         if (Pollen > MaxPollen)
         {
             Pollen = MaxPollen;
-            Destroy();
         }
-        else
-        {
-            pollenBar.SetPercentage(Pollen / MaxPollen);
-        }
+        pollenBar.SetPercentage(Pollen / MaxPollen);
     }
     public void SetPosition(int x, int y)
     {

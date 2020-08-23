@@ -23,16 +23,20 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
 		itemText.text = "Item: None";
 		itemPrice.text = "Price: 0 pollen";
-		currentPollen.text = "You have: " + inventory.pollen.ToString() + " pollen";
+		currentPollen.text = "You have: " + inventory.Pollen.ToString() + " pollen";
+	}
+	public void Update()
+	{
+		currentPollen.text = "You have: " + inventory.Pollen.ToString() + " pollen";
 	}
 
 	public void Buy()
 	{
-		if (inventory.pollen >= item.price)
+		if (inventory.Pollen >= item.price)
 		{
-			inventory.pollen -= item.price;
+			inventory.SubtractPollen(item.price);
 			inventory.AddItem(item.id);
-			currentPollen.text = "You have: " + inventory.pollen.ToString() + " pollen";
+			currentPollen.text = "You have: " + inventory.Pollen.ToString() + " pollen";
 		}
 	}
 
