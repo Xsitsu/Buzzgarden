@@ -208,6 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bar: {fileID: 7083347812188603038}
+  DefaultColor: {r: 0.85490197, g: 0.8980392, b: 0.25490198, a: 1}
+  MaxedColor: {r: 0.9150943, g: 0.500712, b: 0.7170796, a: 1}
 --- !u!1 &7083347812188603038
 GameObject:
   m_ObjectHideFlags: 0

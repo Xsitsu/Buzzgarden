@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PollenBar : MonoBehaviour
 {
-	static Color MaxedColor = new Color(222 / 255f, 106f / 255f, 106f / 255f, 1f);
 	public GameObject Bar;
+	public Color DefaultColor;
+	public Color MaxedColor;
 
 	void Start()
 	{
 		SetPercentage(0);
+		Bar.GetComponent<SpriteRenderer>().color = DefaultColor;
 	}
 
 	public void SetPercentage(float p)
