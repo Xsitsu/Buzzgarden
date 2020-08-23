@@ -10,4 +10,6 @@ public class Buyable : ScriptableObject
 	public string hovertext;
 	public uint price;
 	public Sprite sprite;
+	public Sprite spriteDetail;
+	public Color spriteColor;
 }
