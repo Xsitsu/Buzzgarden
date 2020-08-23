@@ -6,27 +6,17 @@ public class MapTile
 {
 	public enum TileType { None, Grass, Dirt }
 
+	public Vector2 Coordinates { get; private set; }
 	public MapTile.TileType Type;
-	public Flower Flower;
+	public Flower Flower { get; private set; }
 	public bool Updated = false;
 
-	public MapTile()
+	public MapTile(Vector2 coords)
 	{
+		Coordinates = coords;
 		Type = MapTile.TileType.None;
 		Flower = null;
 	}
-
-	public MapTile(MapTile.TileType type)
-	{
-		this.Type = type;
-	}
-
-	public MapTile(MapTile.TileType type, Flower flower)
-	{
-		this.Type = type;
-		this.Flower = flower;
-	}
-
 	public void Update(float step)
 	{
 		if (Flower != null)
@@ -34,10 +24,20 @@ public class MapTile
 			Flower.Update(step);
 		}
 	}
-
+	public void AddFlower(Flower flower)
+	{
+		Flower = flower;
+		Flower.AddToTile(this);
+		Updated = true;
+	}
 	public void RemoveFlower()
 	{
-		Flower = null;
-		Updated = true;
+		if (Flower != null)
+		{
+			Flower old = Flower;
+			Flower = null;
+			old.RemoveFromTile(this);
+			Updated = true;
+		}
 	}
 }

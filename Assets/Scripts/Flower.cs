@@ -8,18 +8,7 @@ public class Flower
 	public float CurrentPollen { get; private set; }
 	public float TotalPollen { get ; private set; }
 	float _regenTimer;
-/*
-	public float CurrentPollen { get; private set; }
-	public float MaxPollen { get; private set; }
-	public float PollenRate { get; private set; }
-	public float TotalPollen { get; private set; }
-	public float MaxTotalPollen { get; private set; }
-	public float RegenTimer { get; private set; }
-	float _regenTimer;
-*/
 	public ParticleSystem pollenParticles;
-	//private float emitCounter;
-
 	MapTile tile;
 	PollenBar pollenBar;
 
@@ -32,18 +21,6 @@ public class Flower
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
 		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
 	}
-	public Flower(MapTile tile)
-	{
-		CurrentPollen = 0;
-		TotalPollen = 0;
-		_regenTimer = 0;
-
-		pollenBar = FlowerHandler.Instance.CreatePollenBar();
-		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
-
-		SetTile(tile);
-	}
-
 	public void Destroy()
 	{
 		if (pollenBar != null)
@@ -60,6 +37,22 @@ public class Flower
 		{
 			tile.RemoveFlower();
 			tile = null;
+		}
+	}
+	public void AddToTile(MapTile tile)
+	{
+		this.tile = tile;
+		foreach (IFlowerEffect effect in flowerType.OnAddedEffects)
+		{
+			effect.Apply(tile);
+		}
+	}
+	public void RemoveFromTile(MapTile tile)
+	{
+		this.tile = null;
+		foreach (IFlowerEffect effect in flowerType.OnRemovedEffects)
+		{
+			effect.Apply(tile);
 		}
 	}
 	public void SetTile(MapTile tile)

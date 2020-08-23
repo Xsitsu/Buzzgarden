@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f4ec9203692b1488d939b7c09af7c7, type: 3}
+  m_Name: Yellow
+  m_EditorClassIdentifier: 
+  FlowerColor: {r: 0.94314045, g: 1, b: 0.40099996, a: 1}
+  MaxPollen: 20
+  LifetimePollen: 40
+  PollenGenerationRate: 1
+  RegenTimer: 2
+  OnAddedEffects:
+  - {fileID: 11400000, guid: a8db90f43fade134cb2a8e8acf884886, type: 2}
+  - {fileID: 11400000, guid: 88ed8c6a17f4e2142adb443559faa1f8, type: 2}
+  OnRemovedEffects:
+  - {fileID: 11400000, guid: 28d6da6453d16b742b15475cc0d06d52, type: 2}

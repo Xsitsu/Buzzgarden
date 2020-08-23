@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IFlowerEffect
 {
-    void Apply();
+    void Apply(MapTile tile);
 }

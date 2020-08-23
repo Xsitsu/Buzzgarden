@@ -24,7 +24,8 @@ public class Map
 		{
 			for (int y = 0; y < size_y; y++)
 			{
-				tile = new MapTile(MapTile.TileType.Grass);
+				tile = new MapTile(new Vector2(x, y));
+				tile.Type = MapTile.TileType.Grass;
 				Tiles[x, y] = tile;
 
 				int val = rand.Next(1, 100);
@@ -33,7 +34,7 @@ public class Map
 					flower = FlowerHandler.Instance.CreateFlower();
 					flower.SetTile(tile);
 					flower.SetPosition(x, y);
-					tile.Flower = flower;
+					tile.AddFlower(flower);
 				}
 				else if (val <= 44)
 				{
@@ -47,10 +48,8 @@ public class Map
 		flower.SetTile(tile);
 		flower.SetPosition(SizeX / 2, SizeY / 2);
 		tile.Type = MapTile.TileType.Grass;
-		tile.Flower = flower;
+		tile.AddFlower(flower);
 	}
-	public Map() : this(0, 0) { }
-	public Map(System.Numerics.Vector2 size) : this((int)size.X, (int)size.Y) { }
 
 	// Not a MonoBehavior class, so Update must be public so that it can be called elsewhere.
 	public void Update(float step)
@@ -65,17 +64,17 @@ public class Map
 			}
 		}
 	}
-
-	public MapTile GetTileFromCell(Vector3Int cell)
+	public MapTile GetTile(int x, int y)
 	{
-		int x = cell.x;
-		int y = cell.y;
-
 		if (x >= 0 && y >= 0 && x < SizeX && y < SizeY)
 		{
 			return Tiles[x, y];
 		}
 		return null;
+	}
+	public MapTile GetTileFromCell(Vector3Int cell)
+	{
+		return GetTile(cell.x, cell.y);
 	}
 
 	public List<Flower> GetFlowers()

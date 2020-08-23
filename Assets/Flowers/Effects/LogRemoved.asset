@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f4ec9203692b1488d939b7c09af7c7, type: 3}
-  m_Name: Yellow
+  m_Script: {fileID: 11500000, guid: 88d0440808a208f42859c1ab563c5410, type: 3}
+  m_Name: LogRemoved
   m_EditorClassIdentifier: 
+  Message: Removed test
