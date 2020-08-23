@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-	static private PlayerInventory _instance;
-	static public PlayerInventory Instance { get { return _instance; } }
+	private static PlayerInventory _instance;
+	public static PlayerInventory Instance { get { return _instance; } }
 
 	public uint pollen = 0;
 
