@@ -9,9 +9,9 @@ public class Flower
 	public float PollenRate { get; private set; }
 	public float TotalPollen { get; private set; }
 	public float MaxTotalPollen { get; private set; }
-
+	public float RegenTimer { get; private set; }
+	float _regenTimer;
 	public Color PetalsColor { get; set; }
-
 	public ParticleSystem pollenParticles;
 
 	MapTile tile;
@@ -28,6 +28,9 @@ public class Flower
 
 		TotalPollen = 0;
 		MaxTotalPollen = 80;
+
+		RegenTimer = 2;
+		_regenTimer = 0;
 
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
 		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
@@ -56,13 +59,20 @@ public class Flower
 	{
 		if (MaxTotalPollen > TotalPollen)
 		{
-			float addPollen = PollenRate * step;
-			Pollen += addPollen;
-			TotalPollen += addPollen;
-
-			if (Pollen > MaxPollen)
+			if (_regenTimer > 0)
 			{
-				Pollen = MaxPollen;
+				_regenTimer -= step;
+			}
+			else
+			{
+				float addPollen = PollenRate * step;
+				Pollen += addPollen;
+				TotalPollen += addPollen;
+
+				if (Pollen > MaxPollen)
+				{
+					Pollen = MaxPollen;
+				}
 			}
 		}
 		else
@@ -82,22 +92,32 @@ public class Flower
 	public float HarvestPollen(float amount)
 	{
 		float harvested = amount;
-		if (Pollen < amount)
+		if (Pollen > 0)
 		{
-			harvested = Pollen;
-			Pollen = 0;
-
-			if (TotalPollen > MaxTotalPollen)
+			if (Pollen < amount)
 			{
-				this.Destroy();
+				harvested = Pollen;
+				Pollen = 0;
+
+				if (TotalPollen > MaxTotalPollen)
+				{
+					this.Destroy();
+				}
 			}
+			else
+			{
+				Pollen -= amount;
+			}
+
+			pollenParticles.Emit(1);
 		}
 		else
 		{
-			Pollen -= amount;
+			harvested = 0;
 		}
 
-		pollenParticles.Emit(1);
+		_regenTimer = RegenTimer;
+
 		return harvested;
 	}
 }
