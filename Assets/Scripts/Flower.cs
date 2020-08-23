@@ -12,6 +12,8 @@ public class Flower
 
 	public Color PetalsColor { get; set; }
 
+	public ParticleSystem pollenParticles;
+
 	MapTile tile;
 	PollenBar pollenBar;
 
@@ -28,6 +30,8 @@ public class Flower
 		MaxTotalPollen = 80;
 
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
+		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
+		pollenParticles.Stop();
 	}
 
 	public void Destroy()
@@ -36,6 +40,12 @@ public class Flower
 		{
 			Object.Destroy(pollenBar.gameObject);
 		}
+
+		if (pollenParticles != null)
+		{
+			Object.Destroy(pollenParticles.gameObject);
+		}
+
 		if (tile != null)
 		{
 			tile.RemoveFlower();
@@ -66,6 +76,7 @@ public class Flower
 	public void SetPosition(int x, int y)
 	{
 		pollenBar.transform.position = new Vector3(x, y, 0);
+		pollenParticles.transform.position = new Vector3(x + 0.5f, y + 0.5f, 0);
 	}
 
 	public float HarvestPollen(float amount)

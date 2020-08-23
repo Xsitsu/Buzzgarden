@@ -83,16 +83,21 @@ public class CharacterController : MonoBehaviour
 			Vector2 diff = new Vector2((float)cell.x - transform.position.x, (float)cell.y - transform.position.y);
 			float dist = diff.magnitude;
 
+			MapTile tile = MapHandler.Instance.Map.GetTileFromCell(cell);
 			if (dist <= PollenHarvestDistance)
 			{
-				MapTile tile = MapHandler.Instance.Map.GetTileFromCell(cell);
-				if (tile != null)
+				if (tile != null && tile.Flower != null)
 				{
-					if (tile.Flower != null)
-					{
-						float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
-						PlayerInventory.Instance.AddPollen(harvested);
-					}
+					tile.Flower.pollenParticles.Play();
+					float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
+					PlayerInventory.Instance.AddPollen(harvested);
+				}
+			}
+			else
+			{
+				if (tile != null && tile.Flower != null)
+				{
+					tile.Flower.pollenParticles.Stop();
 				}
 			}
 		}
