@@ -8,6 +8,7 @@ public class MapTile
 
     public MapTile.TileType Type;
     public Flower Flower;
+    public bool Updated = false;
     public MapTile()
     {
         Type = MapTile.TileType.None;
@@ -22,5 +23,17 @@ public class MapTile
     {
         this.Type = type;
         this.Flower = flower;
+    }
+    public void Update(float step)
+    {
+        if (Flower != null)
+        {
+            Flower.Update(step);
+        }
+    }
+    public void RemoveFlower()
+    {
+        Flower = null;
+        Updated = true;
     }
 }

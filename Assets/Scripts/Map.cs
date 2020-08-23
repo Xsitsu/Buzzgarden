@@ -7,6 +7,7 @@ public class Map
     public int SizeX;
     public int SizeY;
     public MapTile[,] Tiles;
+    public bool NeedsRedraw = false;
 
     public Map(int size_x, int size_y)
     {
@@ -15,29 +16,63 @@ public class Map
         Tiles = new MapTile[size_x, size_y];
         
         System.Random rand = new System.Random();
+        Flower flower;
+        MapTile tile;
 
         //temp
         for (int x = 0; x < size_x; x++)
         {
             for (int y = 0; y < size_y; y++)
             {
-                Tiles[x,y] = new MapTile(MapTile.TileType.Grass);
+                tile = new MapTile(MapTile.TileType.Grass);
+                Tiles[x,y] = tile;
 
                 int val = rand.Next(1, 100);
                 if (val <= 1)
                 {
-                    Tiles[x,y].Flower = new Flower(Flower.FlowerType.Yellow);;
+                    flower = new Flower(tile);
+                    flower.Type = Flower.FlowerType.Yellow;
+                    flower.SetPosition(x, y);
+                    tile.Flower = flower;
                 }
                 else if (val <= 44)
                 {
-                    Tiles[x,y].Type = MapTile.TileType.Dirt;
+                    tile.Type = MapTile.TileType.Dirt;
                 }
             }
         }
 
-        Tiles[SizeX/2,SizeY/2].Type = MapTile.TileType.Grass;
-        Tiles[SizeX/2,SizeY/2].Flower = new Flower(Flower.FlowerType.Yellow);
+        tile = Tiles[SizeX/2,SizeY/2];
+        flower = new Flower(tile);
+        flower.Type = Flower.FlowerType.Yellow;
+        flower.SetPosition(SizeX/2, SizeY/2);
+        tile.Type = MapTile.TileType.Grass;
+        tile.Flower = flower;
     }
     public Map() : this(0, 0) {}
     public Map(System.Numerics.Vector2 size) : this((int)size.X, (int)size.Y) {}
+    public void Update(float step)
+    {
+        foreach (MapTile tile in Tiles)
+        {
+            tile.Update(step);
+            if (tile.Updated)
+            {
+                tile.Updated = false;
+                NeedsRedraw = true;
+            }
+        }
+    }
+    public List<Flower> GetFlowers()
+    {
+        List<Flower> flowers = new List<Flower>();
+        foreach (MapTile tile in Tiles)
+        {
+            if (tile.Flower != null)
+            {
+                flowers.Add(tile.Flower);
+            }
+        }
+        return flowers;
+    }
 }

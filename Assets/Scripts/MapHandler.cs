@@ -22,7 +22,12 @@ public class MapHandler : MonoBehaviour
 
 	void Update()
 	{
-
+        map.Update(Time.deltaTime);
+        if (map.NeedsRedraw)
+        {
+            map.NeedsRedraw = false;
+            mapDrawer.DrawMap(map);
+        }
 	}
 
 	public bool ContainsCell(Vector3Int cell)
