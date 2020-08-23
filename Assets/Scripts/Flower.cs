@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Flower
 {
-	public float Pollen { get; private set; }
+	public float CurrentPollen { get; private set; }
 	public float MaxPollen { get; private set; }
 	public float PollenRate { get; private set; }
 	public float TotalPollen { get; private set; }
@@ -13,6 +13,7 @@ public class Flower
 	float _regenTimer;
 	public Color PetalsColor { get; set; }
 	public ParticleSystem pollenParticles;
+	//private float emitCounter;
 
 	MapTile tile;
 	PollenBar pollenBar;
@@ -22,7 +23,7 @@ public class Flower
 		this.tile = tile;
 
 		PetalsColor = new Color(1f, 1f, 1f, 1f);
-		Pollen = 0;
+		CurrentPollen = 0;
 		MaxPollen = 40;
 		PollenRate = 1;
 
@@ -66,12 +67,12 @@ public class Flower
 			else
 			{
 				float addPollen = PollenRate * step;
-				Pollen += addPollen;
+				CurrentPollen += addPollen;
 				TotalPollen += addPollen;
 
-				if (Pollen > MaxPollen)
+				if (CurrentPollen > MaxPollen)
 				{
-					Pollen = MaxPollen;
+					CurrentPollen = MaxPollen;
 				}
 			}
 		}
@@ -80,7 +81,7 @@ public class Flower
 			pollenBar.SetMaxed();
 		}
 
-		pollenBar.SetPercentage(Pollen / MaxPollen);
+		pollenBar.SetPercentage(CurrentPollen / MaxPollen);
 	}
 
 	public void SetPosition(int x, int y)
@@ -89,35 +90,29 @@ public class Flower
 		pollenParticles.transform.position = new Vector3(x + 0.5f, y + 0.5f, 0);
 	}
 
-	public float HarvestPollen(float amount)
+	public float HarvestPollen(float toHarvest)
 	{
-		float harvested = amount;
-		if (Pollen > 0)
+		if (toHarvest >= CurrentPollen)
 		{
-			if (Pollen < amount)
-			{
-				harvested = Pollen;
-				Pollen = 0;
+			toHarvest = CurrentPollen;
 
-				if (TotalPollen > MaxTotalPollen)
-				{
-					this.Destroy();
-				}
-			}
-			else
+			if (TotalPollen > MaxTotalPollen)
 			{
-				Pollen -= amount;
+				this.Destroy();
 			}
-
-			pollenParticles.Emit(1);
 		}
-		else
+
+		CurrentPollen -= toHarvest;
+		//emitCounter += toHarvest;
+
+		if (CurrentPollen > 0)
 		{
-			harvested = 0;
+			//emitCounter = 0;
+			pollenParticles.Emit(1);
 		}
 
 		_regenTimer = RegenTimer;
 
-		return harvested;
+		return toHarvest;
 	}
 }
