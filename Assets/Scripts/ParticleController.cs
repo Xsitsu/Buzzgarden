@@ -7,18 +7,17 @@ public class ParticleController : MonoBehaviour
 	public GameObject Player;
 
 	private ParticleSystem emitter;
-	private ParticleSystem.Particle[] particles;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		emitter = GetComponent<ParticleSystem>();
-		particles = new ParticleSystem.Particle[emitter.main.maxParticles];
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		ParticleSystem.Particle[] particles = new ParticleSystem.Particle[emitter.main.maxParticles];
 		int numParticles = emitter.GetParticles(particles);
 
 		for (int i = 0; i < numParticles; ++i)
@@ -28,7 +27,14 @@ public class ParticleController : MonoBehaviour
 
 			if (particle.remainingLifetime < 2)
 			{
-				particle.position = Vector3.MoveTowards(particle.position, Player.transform.position, Time.deltaTime * 5);
+				if (distance >= 0.1f)
+				{
+					particle.position = Vector3.MoveTowards(particle.position, Player.transform.position, Time.deltaTime * 5);
+				}
+				else
+				{
+					particle.remainingLifetime = -1;
+				}
 			}
 		}
 
