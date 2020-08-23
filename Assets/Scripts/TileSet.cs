@@ -6,5 +6,8 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(fileName = "TileSet", menuName = "FlowerGame/TileSet")]
 public class TileSet : ScriptableObject
 {
-	public Tile[] Tiles;
+	public Tile DirtTile;
+	public Tile GrassTile;
+	public Tile FlowerTile;
+	public Tile[] BorderTiles;
 }

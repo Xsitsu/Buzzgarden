@@ -356,7 +356,7 @@ SpriteRenderer:
   m_SortingLayerID: -1530113199
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9215866277335855889, guid: 68e9b3ed49b61104b95b117bf6607dd3,
+  m_Sprite: {fileID: 7528283537450977029, guid: 32b2460495331974389aaf5d58939079,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -382,6 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 4
   grid: {fileID: 6814222316063900819}
+  PollenHarvestSpeed: 6
+  PollenHarvestDistance: 1
 --- !u!114 &354543179909986877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,7 +596,7 @@ MonoBehaviour:
   mapHandler: {fileID: 8993901579187300491}
   grid: {fileID: 6814222316063900819}
   tilemap: {fileID: 466060247046037903}
-  selectionTile: {fileID: 11400000, guid: b76910a5775b7fa4884c1c1070a4d899, type: 2}
+  selectionTile: {fileID: 11400000, guid: c310ab1df1f73a84f8c824f3fcc32d97, type: 2}
 --- !u!1 &8168898471099000532
 GameObject:
   m_ObjectHideFlags: 0

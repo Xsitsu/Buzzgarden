@@ -46,6 +46,7 @@ public class MapDrawer : MonoBehaviour
     }
     private int GrassBordersToIndex(bool up, bool down, bool left, bool right)
     {
+        /*
         if (up && down && left && right) return 0; // no sprite yet
         if (up && down && left && !right) return 12;
         if (up && down && !left && right) return 13;
@@ -65,9 +66,15 @@ public class MapDrawer : MonoBehaviour
         if (!up && !down && left && !right) return 5;
         if (!up && !down && !left && right) return 6;
         if (!up && !down && !left && !right) return 0;
+        */
 
-        // should never get here
-        return 0;
+        int index = 0;
+        if (right) { index += 1; }
+        if (left) { index += 2; }
+        if (down) { index += 4; }
+        if (up) { index += 8; }
+
+        return index;
     }
     public void DrawMap(Map map)
     {
@@ -85,29 +92,31 @@ public class MapDrawer : MonoBehaviour
             {
                 pos.y = y;
 
-                TilemapDirt.SetTile(pos, TileSet.Tiles[0]);
+                TilemapDirt.SetTile(pos, TileSet.DirtTile);
 
                 MapTile tile = map.Tiles[x, y];
                 if (tile.Type == MapTile.TileType.Grass)
                 {
-                    TilemapGrass.SetTile(pos, TileSet.Tiles[1]);
+                    TilemapGrass.SetTile(pos, TileSet.GrassTile);
                 }
                 else if (tile.Type == MapTile.TileType.Dirt)
                 {
-                    bool up = (GetTileType(map, x, y + 1) == MapTile.TileType.Grass);
-                    bool down = (GetTileType(map, x, y - 1) == MapTile.TileType.Grass);
-                    bool left = (GetTileType(map, x - 1, y) == MapTile.TileType.Grass);
-                    bool right = (GetTileType(map, x + 1, y) == MapTile.TileType.Grass);
+                    bool up = (GetTileType(map, x, y + 1) != MapTile.TileType.Dirt);
+                    bool down = (GetTileType(map, x, y - 1) != MapTile.TileType.Dirt);
+                    bool left = (GetTileType(map, x - 1, y) != MapTile.TileType.Dirt);
+                    bool right = (GetTileType(map, x + 1, y) != MapTile.TileType.Dirt);
 
                     int setIndex = GrassBordersToIndex(up, down, left, right);
                     if (setIndex > 0)
                     {
-                        TilemapGrass.SetTile(pos, TileSet.Tiles[setIndex]);
+                        TilemapGrass.SetTile(pos, TileSet.BorderTiles[setIndex]);
                     }
                 }
 
                 if (tile.Flower != null)
                 {
+                    TilemapFlowers.SetTile(pos, TileSet.FlowerTile);
+                    /*
                     if (tile.Flower.Type == Flower.FlowerType.Yellow)
                     {
                         TilemapFlowers.SetTile(pos, TileSet.Tiles[21]);
@@ -124,6 +133,7 @@ public class MapDrawer : MonoBehaviour
                     {
                         TilemapFlowers.SetTile(pos, TileSet.Tiles[20]);
                     }
+                    */
                 }
             }
         }
