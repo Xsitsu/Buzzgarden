@@ -51,9 +51,33 @@ public class CharacterController : MonoBehaviour
 		vel = vel.normalized * Speed;
 		transform.position += vel * Time.deltaTime;
 
-        if (Input.GetMouseButton(0))
+        if (true || Input.GetMouseButton(0))
         {
-            Vector3Int cell = TileSelector.Instance.SelectedCell;
+            
+            float posX = transform.position.x;
+            float posY = transform.position.y;
+            int floorX = (int)Mathf.Floor(posX);
+            int floorY = (int)Mathf.Floor(posY);
+            float decX = (posX - floorX);
+            float decY = (posY - floorY);
+
+            int coordX = floorX;
+            int coordY = floorY;
+
+            if (decX >= 0.5f)
+            {
+                coordX++;
+            }
+            if (decY >= 0.5f)
+            {
+                coordY++;
+            }
+            
+            //int coordX = (int)(transform.position.x + 0.5f);
+            //int coordY = (int)(transform.position.y + 0.5f);
+
+            Vector3Int cell = new Vector3Int(coordX, coordY, 0);
+            //Vector3Int cell = TileSelector.Instance.SelectedCell;
 
             Vector2 diff = new Vector2((float)cell.x - transform.position.x, (float)cell.y - transform.position.y);
             float dist = diff.magnitude;
