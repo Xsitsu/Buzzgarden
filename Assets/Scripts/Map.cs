@@ -30,8 +30,8 @@ public class Map
 				int val = rand.Next(1, 100);
 				if (val <= 1)
 				{
-					flower = new Flower(tile);
-					flower.PetalsColor = new Color(1f, 1f, 0f, 1f);
+					flower = FlowerHandler.Instance.CreateFlower();
+					flower.SetTile(tile);
 					flower.SetPosition(x, y);
 					tile.Flower = flower;
 				}
@@ -43,8 +43,8 @@ public class Map
 		}
 
 		tile = Tiles[SizeX / 2, SizeY / 2];
-		flower = new Flower(tile);
-		flower.PetalsColor = new Color(0f, 1f, 0f, 1f);
+		flower = FlowerHandler.Instance.CreateFlower();
+		flower.SetTile(tile);
 		flower.SetPosition(SizeX / 2, SizeY / 2);
 		tile.Type = MapTile.TileType.Grass;
 		tile.Flower = flower;

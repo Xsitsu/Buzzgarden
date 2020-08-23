@@ -45,3 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PollenBar: {fileID: 5222736575222501838, guid: dfb3d899a04d3f748810b32bd85f5d65,
     type: 3}
+  PollenParticles: {fileID: 0}
+  PollenTarget: {fileID: 0}
+  DefaultFlowerType: {fileID: 11400000, guid: b672d98978fee0845b19f047c69ee350, type: 2}

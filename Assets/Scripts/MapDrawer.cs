@@ -93,7 +93,7 @@ public class MapDrawer : MonoBehaviour
 
 					TilemapFlowerPetals.SetTile(pos, TileSet.FlowerPetalsTile);
 					TilemapFlowerPetals.SetTileFlags(pos, TileFlags.None);
-					TilemapFlowerPetals.SetColor(pos, tile.Flower.PetalsColor);
+					TilemapFlowerPetals.SetColor(pos, tile.Flower.flowerType.FlowerColor);
 				}
 			}
 		}

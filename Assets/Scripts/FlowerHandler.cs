@@ -9,6 +9,7 @@ public class FlowerHandler : MonoBehaviour
 	public GameObject PollenBar;
 	public GameObject PollenParticles;
 	public GameObject PollenTarget;
+	public FlowerType DefaultFlowerType;
 	List<Flower> Flowers;
 
 	void Awake()
@@ -46,5 +47,19 @@ public class FlowerHandler : MonoBehaviour
 		emitter.GetComponent<ParticleController>().Player = PollenTarget;
 
 		return emitter.GetComponent<ParticleSystem>();
+	}
+
+	public Flower CreateFlower(FlowerType flowerType = null)
+	{
+		Flower flower = new Flower();
+		if (flowerType != null)
+		{
+			flower.flowerType = flowerType;
+		}
+		else
+		{
+			flower.flowerType = DefaultFlowerType;
+		}
+		return flower;
 	}
 }
