@@ -9,6 +9,9 @@ public class Flower
     public float Pollen { get; private set; }
     public float MaxPollen { get; private set; }
     public float PollenRate { get; private set; }
+    public float TotalPollen { get; private set; }
+    public float MaxTotalPollen { get; private set; }
+    
     MapTile tile;
     PollenBar pollenBar;
     public Flower(MapTile tile)
@@ -19,6 +22,9 @@ public class Flower
         Pollen = 0;
         MaxPollen = 40;
         PollenRate = 1;
+
+        TotalPollen = 0;
+        MaxTotalPollen = 80;
 
         pollenBar = FlowerHandler.Instance.CreatePollenBar();
     }
@@ -36,11 +42,21 @@ public class Flower
     }
     public void Update(float step)
     {
-        Pollen += PollenRate * step;
-        if (Pollen > MaxPollen)
+        if (MaxTotalPollen > TotalPollen)
         {
-            Pollen = MaxPollen;
+            float addPollen = PollenRate * step;
+            Pollen += addPollen;
+            TotalPollen += addPollen;
+            if (Pollen > MaxPollen)
+            {
+                Pollen = MaxPollen;
+            }
         }
+        else
+        {
+            pollenBar.SetMaxed();
+        }
+        
         pollenBar.SetPercentage(Pollen / MaxPollen);
     }
     public void SetPosition(int x, int y)
@@ -54,6 +70,11 @@ public class Flower
         {
             harvested = Pollen;
             Pollen = 0;
+
+            if (TotalPollen > MaxTotalPollen)
+            {
+                this.Destroy();
+            }
         }
         else
         {
