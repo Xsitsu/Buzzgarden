@@ -53,9 +53,9 @@ public class CharacterController : MonoBehaviour
 
         if (true || Input.GetMouseButton(0))
         {
-            
-            float posX = transform.position.x;
-            float posY = transform.position.y;
+            //Debug.Log("Pos: " + transform.localPosition.x + "/" + transform.localPosition.y);
+            float posX = transform.localPosition.x;
+            float posY = transform.localPosition.y;
             int floorX = (int)Mathf.Floor(posX);
             int floorY = (int)Mathf.Floor(posY);
             float decX = (posX - floorX);
@@ -63,7 +63,7 @@ public class CharacterController : MonoBehaviour
 
             int coordX = floorX;
             int coordY = floorY;
-
+            
             if (decX >= 0.5f)
             {
                 coordX++;
