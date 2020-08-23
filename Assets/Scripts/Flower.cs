@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Flower
 {
+	public FlowerType flowerType;
+	public float CurrentPollen { get; private set; }
+	public float TotalPollen { get ; private set; }
+	float _regenTimer;
+/*
 	public float CurrentPollen { get; private set; }
 	public float MaxPollen { get; private set; }
 	public float PollenRate { get; private set; }
@@ -11,30 +16,32 @@ public class Flower
 	public float MaxTotalPollen { get; private set; }
 	public float RegenTimer { get; private set; }
 	float _regenTimer;
-	public Color PetalsColor { get; set; }
+*/
 	public ParticleSystem pollenParticles;
 	//private float emitCounter;
 
 	MapTile tile;
 	PollenBar pollenBar;
 
-	public Flower(MapTile tile)
+	public Flower()
 	{
-		this.tile = tile;
-
-		PetalsColor = new Color(1f, 1f, 1f, 1f);
 		CurrentPollen = 0;
-		MaxPollen = 40;
-		PollenRate = 1;
-
 		TotalPollen = 0;
-		MaxTotalPollen = 80;
-
-		RegenTimer = 2;
 		_regenTimer = 0;
 
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
 		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
+	}
+	public Flower(MapTile tile)
+	{
+		CurrentPollen = 0;
+		TotalPollen = 0;
+		_regenTimer = 0;
+
+		pollenBar = FlowerHandler.Instance.CreatePollenBar();
+		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
+
+		SetTile(tile);
 	}
 
 	public void Destroy()
@@ -55,10 +62,14 @@ public class Flower
 			tile = null;
 		}
 	}
+	public void SetTile(MapTile tile)
+	{
+		this.tile = tile;
+	}
 
 	public void Update(float step)
 	{
-		if (MaxTotalPollen > TotalPollen)
+		if (flowerType.LifetimePollen > TotalPollen)
 		{
 			if (_regenTimer > 0)
 			{
@@ -66,13 +77,13 @@ public class Flower
 			}
 			else
 			{
-				float addPollen = PollenRate * step;
+				float addPollen = flowerType.PollenGenerationRate * step;
 				CurrentPollen += addPollen;
 				TotalPollen += addPollen;
 
-				if (CurrentPollen > MaxPollen)
+				if (CurrentPollen > flowerType.MaxPollen)
 				{
-					CurrentPollen = MaxPollen;
+					CurrentPollen = flowerType.MaxPollen;
 				}
 			}
 		}
@@ -81,7 +92,7 @@ public class Flower
 			pollenBar.SetMaxed();
 		}
 
-		pollenBar.SetPercentage(CurrentPollen / MaxPollen);
+		pollenBar.SetPercentage(CurrentPollen / flowerType.MaxPollen);
 	}
 
 	public void SetPosition(int x, int y)
@@ -96,7 +107,7 @@ public class Flower
 		{
 			toHarvest = CurrentPollen;
 
-			if (TotalPollen > MaxTotalPollen)
+			if (TotalPollen > flowerType.LifetimePollen)
 			{
 				this.Destroy();
 			}
@@ -111,7 +122,7 @@ public class Flower
 			pollenParticles.Emit(1);
 		}
 
-		_regenTimer = RegenTimer;
+		_regenTimer = flowerType.RegenTimer;
 
 		return toHarvest;
 	}
