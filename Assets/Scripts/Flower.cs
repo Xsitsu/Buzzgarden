@@ -11,7 +11,7 @@ public class Flower
 	public ParticleSystem pollenParticles;
 	MapTile tile;
 	PollenBar pollenBar;
-	GameObject flowerTransform;
+	public GameObject flowerTransform { get; private set; }
 
 	public Flower()
 	{
@@ -74,22 +74,11 @@ public class Flower
 			{
 				_regenTimer -= step;
 			}
-			else if (CurrentPollen < flowerType.MaxPollen)
+			else
 			{
 				float addPollen = flowerType.PollenGenerationRate * step;
-				float diff = flowerType.MaxPollen - CurrentPollen;
-				if (addPollen > diff)
-				{
-					addPollen = diff;
-				}
-
-				CurrentPollen += addPollen;
-				TotalPollen += addPollen;
-
-				if (CurrentPollen > flowerType.MaxPollen)
-				{
-					CurrentPollen = flowerType.MaxPollen;
-				}
+				float addedPollen = GeneratePollen(addPollen);	
+				TotalPollen += addedPollen;
 			}
 		}
 		else
@@ -104,7 +93,33 @@ public class Flower
 			effect.Apply(tile, step);
 		}
 	}
+	public bool IsFull()
+	{
+		return (CurrentPollen >= flowerType.MaxPollen);
+	}
 
+	public float GeneratePollen(float addPollen)
+	{
+		float addedPollen = 0;
+		if (!IsFull())
+		{
+			float diff = flowerType.MaxPollen - CurrentPollen;
+			if (addPollen > diff)
+			{
+				addPollen = diff;
+			}
+
+			CurrentPollen += addPollen;
+
+			if (CurrentPollen > flowerType.MaxPollen)
+			{
+				CurrentPollen = flowerType.MaxPollen;
+			}
+
+			addedPollen = addPollen;
+		}
+		return addedPollen;
+	}
 	public void SetPosition(int x, int y)
 	{
 		pollenBar.transform.position = new Vector3(x, y, 0);
@@ -112,7 +127,7 @@ public class Flower
 		flowerTransform.transform.position = new Vector3(x + 0.5f, y + 0.5f, 0);
 	}
 
-	public float HarvestPollen(float toHarvest)
+	public float TakePollen(float toHarvest)
 	{
 		if (toHarvest >= CurrentPollen)
 		{
@@ -122,23 +137,28 @@ public class Flower
 			{
 				this.Destroy();
 			}
+
+			CurrentPollen = 0;
+		}
+		else
+		{
+			CurrentPollen -= toHarvest;
 		}
 
-		CurrentPollen -= toHarvest;
-		//emitCounter += toHarvest;
-
-		if (CurrentPollen > 0)
+		if (toHarvest > 0)
 		{
 			var particleMain = pollenParticles.main;
 			particleMain.startColor = flowerType.FlowerColor;
 
-			//emitCounter = 0;
 			pollenParticles.Emit(1);
 		}
 
-		_regenTimer = flowerType.RegenTimer;
-
 		return toHarvest;
+	}
+	public float HarvestPollen(float toHarvest)
+	{
+		_regenTimer = flowerType.RegenTimer;
+		return TakePollen(toHarvest);
 	}
 
 	public void SetParticlesTarget(GameObject target)

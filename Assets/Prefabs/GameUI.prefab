@@ -2329,6 +2329,12 @@ PrefabInstance:
       propertyPath: PollenDisplayList
       value: 
       objectReference: {fileID: 3597253702396016301}
+    - target: {fileID: 7851304180688710985, guid: 99201e3f4092cb74dbb934b99eb4b86e,
+        type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: aa4d2ec745033c2459b9fa27d73a9118,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99201e3f4092cb74dbb934b99eb4b86e, type: 3}
 --- !u!224 &1659609446392805952 stripped
