@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5546064783367020293}
-  - component: {fileID: 8440561087116445706}
+  - component: {fileID: 5947058605811800526}
   m_Layer: 5
   m_Name: PollenDisplay
   m_TagString: Untagged
@@ -262,7 +262,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 128, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &8440561087116445706
+--- !u!114 &5947058605811800526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flowerType: {fileID: 0}
-  Container: {fileID: 3689402427965065692}
+  Container: {fileID: 0}
   PollenText: {fileID: 2735460513078497645}
   PetalsImage: {fileID: 5546064783130895380}
 --- !u!1 &5546064783902834479

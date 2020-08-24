@@ -289,8 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc783dc0a202814698e188605e85681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PollenText: {fileID: 0}
   ShopFrame: {fileID: 0}
+  PollenDisplayList: {fileID: 2649084887480827291}
 --- !u!1001 &1548747581937328685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,6 +574,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PollenBlue
       objectReference: {fileID: 0}
+    - target: {fileID: 5792174825362446977, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: ad556206d92a65143b3d29e84d618e29,
+        type: 2}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: ad556206d92a65143b3d29e84d618e29,
+        type: 2}
     - target: {fileID: 8440561087116445706, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: flowerType
@@ -1463,6 +1475,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PollenGreen
       objectReference: {fileID: 0}
+    - target: {fileID: 5792174825362446977, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a54fb2ff477adf4bba515d82f824d76,
+        type: 2}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 8a54fb2ff477adf4bba515d82f824d76,
+        type: 2}
     - target: {fileID: 8440561087116445706, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: flowerType
@@ -1854,6 +1878,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PollenPurple
       objectReference: {fileID: 0}
+    - target: {fileID: 5792174825362446977, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 90f4e420164d71441842b8b7dbac657c,
+        type: 2}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 90f4e420164d71441842b8b7dbac657c,
+        type: 2}
     - target: {fileID: 8440561087116445706, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: flowerType
@@ -1985,6 +2021,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PollenRed
       objectReference: {fileID: 0}
+    - target: {fileID: 5792174825362446977, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: c84f21fc62ad04a4dbf21d40b0bbde16,
+        type: 2}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: c84f21fc62ad04a4dbf21d40b0bbde16,
+        type: 2}
     - target: {fileID: 8440561087116445706, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: flowerType
@@ -2116,6 +2164,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PollenYellow
       objectReference: {fileID: 0}
+    - target: {fileID: 5792174825362446977, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: b672d98978fee0845b19f047c69ee350,
+        type: 2}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: b672d98978fee0845b19f047c69ee350,
+        type: 2}
     - target: {fileID: 8440561087116445706, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: flowerType
@@ -2574,6 +2634,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PollenWhite
       objectReference: {fileID: 0}
+    - target: {fileID: 5792174825362446977, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 410f52808d5ca4a4d8234488ea2bb327,
+        type: 2}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 410f52808d5ca4a4d8234488ea2bb327,
+        type: 2}
     - target: {fileID: 8440561087116445706, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: flowerType

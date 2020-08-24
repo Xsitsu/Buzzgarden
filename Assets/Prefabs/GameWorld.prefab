@@ -960,6 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af939ac9186bf0e40ad0df73a0bcdc6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InitialSpawns:
+  - {fileID: 11400000, guid: c84f21fc62ad04a4dbf21d40b0bbde16, type: 2}
   MapSize: {x: 40, y: 40}
 --- !u!114 &2524894852051011407
 MonoBehaviour:

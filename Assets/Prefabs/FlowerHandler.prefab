@@ -48,4 +48,4 @@ MonoBehaviour:
   PollenParticles: {fileID: 194211992073846437, guid: b45eddb87fff3374f9c38e304aa30e62,
     type: 3}
   PollenTarget: {fileID: 0}
-  DefaultFlowerType: {fileID: 11400000, guid: b672d98978fee0845b19f047c69ee350, type: 2}
+  DefaultFlowerType: {fileID: 11400000, guid: 410f52808d5ca4a4d8234488ea2bb327, type: 2}

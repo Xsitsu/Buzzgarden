@@ -7,6 +7,7 @@ public class GameUI : MonoBehaviour
 	static private GameUI _instance;
 	static public GameUI Instance { get { return _instance; } }
 	public GameObject ShopFrame;
+	public GameObject PollenDisplayList;
 	void Awake()
 	{
 		_instance = this;
@@ -18,7 +19,17 @@ public class GameUI : MonoBehaviour
 
 	void Update()
 	{
-
+		foreach (Transform child in PollenDisplayList.transform)
+		{
+			PollenDisplay display = child.GetComponent<PollenDisplay>();
+			if (display)
+			{
+				if (display.GetPollenAmount() > 0)
+				{
+					display.Show();
+				}
+			}
+		}
 	}
 
 	public void ShowShop()

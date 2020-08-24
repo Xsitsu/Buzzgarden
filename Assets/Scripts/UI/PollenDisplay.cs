@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PollenDisplay : MonoBehaviour
 {
     public FlowerType flowerType;
-    public GameObject Container;
 	public TMPro.TextMeshProUGUI PollenText;
     public GameObject PetalsImage;
 	void Start()
@@ -17,18 +16,21 @@ public class PollenDisplay : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            Hide();
         }
 	}
 
 	void Update()
 	{
-        if (flowerType == null) return;
+        if (flowerType == null)
+        {
+            Hide();
+            return;
+        }
 
-        int pollen = (int)PlayerInventory.Instance.GetPollen(flowerType.Id);
+        int pollen = GetPollenAmount();
         if (pollen > 0)
         {
-            Show();
             if (pollen >= 1000000)
             {
                 float num = ((float)(pollen / 100000)) / 10;
@@ -54,13 +56,21 @@ public class PollenDisplay : MonoBehaviour
             Hide();
         }
 	}
+    public int GetPollenAmount()
+    {
+        if (flowerType != null)
+        {
+            return (int)PlayerInventory.Instance.GetPollen(flowerType.Id);
+        }
+        return 0;
+    }
 
 	public void Show()
 	{
-		Container.gameObject.SetActive(true);
+		gameObject.SetActive(true);
 	}
 	public void Hide()
 	{
-		Container.gameObject.SetActive(false);
+		gameObject.SetActive(false);
 	}
 }
