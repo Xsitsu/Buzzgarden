@@ -6,55 +6,55 @@ using UnityEngine.EventSystems;
 
 public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-	public Buyable item;
-	public PlayerInventory inventory;
+	public FlowerType Item;
+	public TileSet TileSet;
+	public PlayerInventory Inventory;
 
-	public TMPro.TextMeshProUGUI itemTextTarget;
-	public TMPro.TextMeshProUGUI itemPriceTarget;
+	public TMPro.TextMeshProUGUI ItemTextTarget;
+	public TMPro.TextMeshProUGUI ItemPriceTarget;
 
 	void Start()
 	{
 		var images = GetComponentsInChildren<Image>();
 		var text = GetComponentInChildren<Text>();
 
-		images[1].sprite = item.sprite;
-		images[1].color = item.spriteColor;
-		images[2].sprite = item.spriteDetail;
-		text.text = item.displayname;
+		images[1].sprite = TileSet.FlowerPetalsTile.sprite;
+		images[1].color = Item.FlowerColor;
+		images[2].sprite = TileSet.FlowerTile.sprite;
+		text.text = Item.StoreName;
 
-		if (itemTextTarget && itemPriceTarget)
+		if (ItemTextTarget && ItemPriceTarget)
 		{
-			itemTextTarget.text = "Item: None";
-			itemPriceTarget.text = "Price: 0 pollen";
+			ItemTextTarget.text = "Item: None";
+			ItemPriceTarget.text = "Price: 0 pollen";
 		}
 
-		inventory = PlayerInventory.Instance;
+		Inventory = PlayerInventory.Instance;
 	}
 
 	public void Buy()
 	{
-		if (inventory.Pollen >= item.price)
+		if (Inventory.Pollen >= Item.StorePrice)
 		{
-			inventory.SubtractPollen(item.price);
-			inventory.AddItem(item.id);
+			Inventory.SubtractPollen(Item.StorePrice);
 		}
 	}
 
 	public void OnPointerEnter(PointerEventData data)
 	{
-		if (itemTextTarget && itemPriceTarget)
+		if (ItemTextTarget && ItemPriceTarget)
 		{
-			itemTextTarget.text = "Item: " + item.hovertext;
-			itemPriceTarget.text = "Price: " + item.price.ToString() + " pollen";
+			ItemTextTarget.text = "Item: " + Item.StoreName;
+			ItemPriceTarget.text = "Price: " + Item.StorePrice.ToString() + " pollen";
 		}
 	}
 
 	public void OnPointerExit(PointerEventData data)
 	{
-		if (itemTextTarget && itemPriceTarget)
+		if (ItemTextTarget && ItemPriceTarget)
 		{
-			itemTextTarget.text = "Item: None";
-			itemPriceTarget.text = "Price: 0 pollen";
+			ItemTextTarget.text = "Item: None";
+			ItemPriceTarget.text = "Price: 0 pollen";
 		}
 	}
 }

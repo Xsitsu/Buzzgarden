@@ -19,3 +19,5 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects: []
+  StorePrice: 10
+  StoreName: Yellow
