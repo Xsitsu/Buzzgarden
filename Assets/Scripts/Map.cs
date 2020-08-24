@@ -82,6 +82,31 @@ public class Map
 		tiles.RemoveAll(t => t == null);
 		return tiles;
 	}
+	void DoGetInRange(MapTile tile, int range, List<MapTile> tiles)
+	{
+		if (range > 0)
+		{
+			List<MapTile> adjacent = GetAdjacent(tile);
+			foreach (MapTile t in adjacent)
+			{
+				if (!tiles.Contains(t))
+				{
+					tiles.Add(t);
+					DoGetInRange(t, range - 1, tiles);
+				}
+			}
+		}
+	}
+	public List<MapTile> GetInRange(MapTile tile, int range)
+	{
+		List<MapTile> tiles = new List<MapTile>();
+		tiles.Add(tile);
+		if (range > 0)
+		{
+			DoGetInRange(tile, range, tiles);
+		}
+		return tiles;
+	}
 	public List<Flower> GetFlowers()
 	{
 		List<Flower> flowers = new List<Flower>();
