@@ -27,6 +27,8 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 			itemTextTarget.text = "Item: None";
 			itemPriceTarget.text = "Price: 0 pollen";
 		}
+
+		inventory = PlayerInventory.Instance;
 	}
 
 	public void Buy()
