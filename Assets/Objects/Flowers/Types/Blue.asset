@@ -22,6 +22,6 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects: []
-  OnUpdateEffects: []
-  StorePrice: 0
-  StoreName: Blue
+  OnUpdateEffects:
+  - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
+  - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}

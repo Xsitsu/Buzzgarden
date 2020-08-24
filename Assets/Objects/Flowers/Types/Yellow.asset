@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: yellow
   Name: Yellow
+  Description: 
   FlowerColor: {r: 0.94314045, g: 1, b: 0.40099996, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
@@ -21,6 +22,6 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects: []
-  OnUpdateEffects: []
-  StorePrice: 10
-  StoreName: Yellow
+  OnUpdateEffects:
+  - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
+  - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}

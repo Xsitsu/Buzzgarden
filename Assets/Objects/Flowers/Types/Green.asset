@@ -23,6 +23,6 @@ MonoBehaviour:
   OnAddedEffects: []
   OnRemovedEffects:
   - {fileID: 11400000, guid: 19b350539e0a56a459d82f9616acff2f, type: 2}
-  OnUpdateEffects: []
-  StorePrice: 10
-  StoreName: Green
+  OnUpdateEffects:
+  - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
+  - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}

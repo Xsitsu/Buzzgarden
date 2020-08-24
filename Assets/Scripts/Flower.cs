@@ -12,6 +12,7 @@ public class Flower
 	MapTile tile;
 	PollenBar pollenBar;
 	public GameObject flowerTransform { get; private set; }
+	bool isDead = false;
 
 	public Flower()
 	{
@@ -90,7 +91,10 @@ public class Flower
 
 		foreach (IFlowerEffect effect in flowerType.OnUpdateEffects)
 		{
-			effect.Apply(tile, step);
+			if (!isDead && tile != null)
+			{
+				effect.Apply(tile, step);
+			}
 		}
 	}
 	public bool IsFull()
@@ -135,7 +139,7 @@ public class Flower
 
 			if (TotalPollen >= flowerType.LifetimePollen)
 			{
-				this.Destroy();
+				Die();
 			}
 
 			CurrentPollen = 0;
@@ -164,5 +168,11 @@ public class Flower
 	public void SetParticlesTarget(GameObject target)
 	{
 		pollenParticles.GetComponent<ParticleController>().SetTarget(target);
+	}
+
+	public void Die()
+	{
+		isDead = true;
+		this.Destroy();
 	}
 }

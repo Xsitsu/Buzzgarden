@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: teal
   Name: Teal
+  Description: 
   FlowerColor: {r: 0.39999998, g: 0.96987283, b: 1, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
@@ -21,6 +22,6 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects: []
-  OnUpdateEffects: []
-  StorePrice: 0
-  StoreName: Teal
+  OnUpdateEffects:
+  - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
+  - {fileID: 0}
