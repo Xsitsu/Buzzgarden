@@ -26,11 +26,11 @@ public class GameUI : MonoBehaviour
 			{
 				if (display.flowerType != null)
 				{
-					int pollen = (int)PlayerInventory.Instance.GetPollen(display.flowerType.Id);
+					float pollen = PlayerInventory.Instance.GetPollen(display.flowerType.Id);
 					if (pollen > 0)
 					{
 						display.Show();
-						display.DisplayPollen(pollen);
+						display.DisplayPollen((int)pollen);
 					}
 					else
 					{
