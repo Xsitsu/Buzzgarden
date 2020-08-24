@@ -20,23 +20,27 @@ public class ParticleController : MonoBehaviour
 		ParticleSystem.Particle[] particles = new ParticleSystem.Particle[emitter.main.maxParticles];
 		int numParticles = emitter.GetParticles(particles);
 
-		for (int i = 0; i < numParticles; ++i)
+		if (Target != null)
 		{
-			ref var particle = ref particles[i];
-			var distance = Vector3.Distance(particle.position, Target.transform.position);
-
-			if (particle.remainingLifetime < 2.5f)
+			for (int i = 0; i < numParticles; ++i)
 			{
-				if (distance >= 0.1f)
+				ref var particle = ref particles[i];
+				var distance = Vector3.Distance(particle.position, Target.transform.position);
+
+				if (particle.remainingLifetime < 2.5f)
 				{
-					particle.position = Vector3.MoveTowards(particle.position, Target.transform.position, Time.deltaTime * 8);
-				}
-				else
-				{
-					particle.remainingLifetime = -1;
+					if (distance >= 0.1f)
+					{
+						particle.position = Vector3.MoveTowards(particle.position, Target.transform.position, Time.deltaTime * 8);
+					}
+					else
+					{
+						particle.remainingLifetime = -1;
+					}
 				}
 			}
 		}
+		
 
 		emitter.SetParticles(particles);
 	}

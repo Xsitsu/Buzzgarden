@@ -34,9 +34,8 @@ public class MapTile
 	{
 		if (Flower != null)
 		{
-			Flower old = Flower;
+			Flower.RemoveFromTile(this);
 			Flower = null;
-			old.RemoveFromTile(this);
 			Updated = true;
 		}
 	}

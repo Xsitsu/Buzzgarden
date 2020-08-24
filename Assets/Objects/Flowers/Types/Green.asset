@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: green
   Name: Green
-  Description: A green flower. It turns surrounding tiles to grass when it dies.
+  Description: Turns nearby dirt tiles to grass when it dies.
   FlowerColor: {r: 0.4224145, g: 1, b: 0.39999998, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
@@ -22,7 +22,7 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects:
-  - {fileID: 11400000, guid: 19b350539e0a56a459d82f9616acff2f, type: 2}
+  - {fileID: 11400000, guid: efd79e33f463806429eaa29f86a71d57, type: 2}
   OnUpdateEffects:
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
   - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}

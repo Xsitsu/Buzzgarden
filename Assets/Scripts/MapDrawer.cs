@@ -65,8 +65,6 @@ public class MapDrawer : MonoBehaviour
 			{
 				pos.y = y;
 
-				TilemapDirt.SetTile(pos, TileSet.DirtTile);
-
 				MapTile tile = map.Tiles[x, y];
 				if (tile.Type == MapTile.TileType.Grass)
 				{
@@ -74,6 +72,7 @@ public class MapDrawer : MonoBehaviour
 				}
 				else if (tile.Type == MapTile.TileType.Dirt)
 				{
+					TilemapDirt.SetTile(pos, TileSet.DirtTile);
 					bool up = (GetTileType(map, x, y + 1) != MapTile.TileType.Dirt);
 					bool down = (GetTileType(map, x, y - 1) != MapTile.TileType.Dirt);
 					bool left = (GetTileType(map, x - 1, y) != MapTile.TileType.Dirt);
@@ -85,6 +84,20 @@ public class MapDrawer : MonoBehaviour
 						TilemapGrass.SetTile(pos, TileSet.BorderTiles[setIndex]);
 					}
 				}
+				else if (tile.Type == MapTile.TileType.None)
+				{
+					bool up = (GetTileType(map, x, y + 1) != MapTile.TileType.None);
+					bool down = (GetTileType(map, x, y - 1) != MapTile.TileType.None);
+					bool left = (GetTileType(map, x - 1, y) != MapTile.TileType.None);
+					bool right = (GetTileType(map, x + 1, y) != MapTile.TileType.None);
+
+					int setIndex = GrassBordersToIndex(up, down, left, right);
+					if (setIndex > 0)
+					{
+						TilemapGrass.SetTile(pos, TileSet.BorderTiles[setIndex]);
+					}
+				}
+				
 
 				if (tile.Flower != null)
 				{
@@ -98,23 +111,35 @@ public class MapDrawer : MonoBehaviour
 
 				if (x == 0)
 				{
-					int index = GrassBordersToIndex(false, false, false, true);
-					TilemapGrass.SetTile(new Vector3Int(pos.x - 1, pos.y, pos.z), TileSet.BorderTiles[index]);
+					if (tile.Type != MapTile.TileType.None)
+					{
+						int index = GrassBordersToIndex(false, false, false, true);
+						TilemapGrass.SetTile(new Vector3Int(pos.x - 1, pos.y, pos.z), TileSet.BorderTiles[index]);
+					}
 				}
 				if (x == map.SizeX - 1)
 				{
-					int index = GrassBordersToIndex(false, false, true, false);
-					TilemapGrass.SetTile(new Vector3Int(pos.x + 1, pos.y, pos.z), TileSet.BorderTiles[index]);
+					if (tile.Type != MapTile.TileType.None)
+					{
+						int index = GrassBordersToIndex(false, false, true, false);
+						TilemapGrass.SetTile(new Vector3Int(pos.x + 1, pos.y, pos.z), TileSet.BorderTiles[index]);
+					}
 				}
 				if (y == 0)
 				{
-					int index = GrassBordersToIndex(true, false, false, false);
-					TilemapGrass.SetTile(new Vector3Int(pos.x, pos.y - 1, pos.z), TileSet.BorderTiles[index]);
+					if (tile.Type != MapTile.TileType.None)
+					{
+						int index = GrassBordersToIndex(true, false, false, false);
+						TilemapGrass.SetTile(new Vector3Int(pos.x, pos.y - 1, pos.z), TileSet.BorderTiles[index]);
+					}
 				}
 				if (y == map.SizeY - 1)
 				{
-					int index = GrassBordersToIndex(false, true, false, false);
-					TilemapGrass.SetTile(new Vector3Int(pos.x, pos.y + 1, pos.z), TileSet.BorderTiles[index]);
+					if (tile.Type != MapTile.TileType.None)
+					{
+						int index = GrassBordersToIndex(false, true, false, false);
+						TilemapGrass.SetTile(new Vector3Int(pos.x, pos.y + 1, pos.z), TileSet.BorderTiles[index]);
+					}
 				}
 			}
 		}

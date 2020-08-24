@@ -14,14 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: orange
   Name: Orange
-  Description: 
+  Description: Turns air into dirt when it dies.
   FlowerColor: {r: 1, g: 0.6326313, b: 0.3, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
   PollenGenerationRate: 1
   RegenTimer: 2
   OnAddedEffects: []
-  OnRemovedEffects: []
+  OnRemovedEffects:
+  - {fileID: 0}
   OnUpdateEffects:
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
   - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}

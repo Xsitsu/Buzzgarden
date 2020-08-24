@@ -13,12 +13,13 @@ public class Flower
 	PollenBar pollenBar;
 	public GameObject flowerTransform { get; private set; }
 	bool isDead = false;
-	public int RangeBonus = 0;
+	public int RangeBonus;
 	public Flower()
 	{
 		CurrentPollen = 0;
 		TotalPollen = 0;
 		_regenTimer = 0;
+		RangeBonus = 0;
 
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
 		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
@@ -56,15 +57,19 @@ public class Flower
 	}
 	public void RemoveFromTile(MapTile tile)
 	{
-		this.tile = null;
 		foreach (IFlowerEffect effect in flowerType.OnRemovedEffects)
 		{
 			effect.Apply(tile, 0);
 		}
+		this.tile = null;
 	}
 	public void SetTile(MapTile tile)
 	{
 		this.tile = tile;
+	}
+	public bool HasTile()
+	{
+		return (tile != null);
 	}
 
 	public void Update(float step)

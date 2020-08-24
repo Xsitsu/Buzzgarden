@@ -14,15 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: purple
   Name: Purple
-  Description: Absorbs pollen from adjacent flowers and stores it. This flower cannot
-    die normally.
+  Description: Absorbs pollen from nearby flowers and stores it. This flower cannot
+    die by normally having its pollen drained.
   FlowerColor: {r: 0.716111, g: 0.3, b: 1, a: 1}
   MaxPollen: 200
   LifetimePollen: 1
   PollenGenerationRate: 0
   RegenTimer: 0
   OnAddedEffects: []
-  OnRemovedEffects: []
+  OnRemovedEffects:
+  - {fileID: 11400000, guid: 04e0e35cf12e22b41a98588a8f5c6bbf, type: 2}
   OnUpdateEffects:
   - {fileID: 11400000, guid: dd50282adfb9fc14c9ee4722c20501b8, type: 2}
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}

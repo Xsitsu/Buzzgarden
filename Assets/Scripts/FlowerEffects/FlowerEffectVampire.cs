@@ -11,28 +11,32 @@ public class FlowerEffectVampire : FlowerEffectBase
     public int Range;
     public override void Apply(MapTile tile, float step)
     {
-        List<MapTile> tiles = MapHandler.Instance.Map.GetInRange(tile, Range + tile.Flower.RangeBonus);
-        foreach (MapTile t in tiles)
+        if (tile.Flower != null)
         {
-            if (!tile.Flower.IsFull())
+            Debug.Log("Vampire Total range: " + (Range + tile.Flower.RangeBonus));
+            List<MapTile> tiles = MapHandler.Instance.Map.GetInRange(tile, Range + tile.Flower.RangeBonus);
+            foreach (MapTile t in tiles)
             {
-                if (t != tile)
+                if (!tile.Flower.IsFull())
                 {
-                    if (t.Flower != null && t.Flower.flowerType.PollenGenerationRate > 0)
+                    if (t != tile)
                     {
-                        if (t.Flower.CurrentPollen > 0)
+                        if (t.Flower != null && t.Flower.flowerType.PollenGenerationRate > 0)
                         {
-                            t.Flower.SetParticlesTarget(tile.Flower.flowerTransform);
-                            float harvested = t.Flower.TakePollen(DrainSpeed * step);
-                            if (harvested > 0)
+                            if (t.Flower.CurrentPollen > 0)
                             {
-                                tile.Flower.AddPollen(harvested);
+                                t.Flower.SetParticlesTarget(tile.Flower.flowerTransform);
+                                float harvested = t.Flower.TakePollen(DrainSpeed * step);
+                                if (harvested > 0)
+                                {
+                                    tile.Flower.AddPollen(harvested);
+                                }
                             }
                         }
                     }
                 }
             }
-            
         }
+        
     }
 }

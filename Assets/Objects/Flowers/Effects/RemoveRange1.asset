@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d11b0100c395f14ba3d98e069827837, type: 3}
-  m_Name: SetDirtRange2
+  m_Script: {fileID: 11500000, guid: fb0acd2fad781e64a836bd8ce76ce7bf, type: 3}
+  m_Name: RemoveRange1
   m_EditorClassIdentifier: 
-  Type: 2
-  Range: 2
+  RangeAugment: -1
+  Range: 1

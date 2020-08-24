@@ -14,14 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: yellow
   Name: Yellow
-  Description: 
+  Description: Increases the effect range of nearby flowers.
   FlowerColor: {r: 0.94314045, g: 1, b: 0.40099996, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
   PollenGenerationRate: 1
   RegenTimer: 2
   OnAddedEffects: []
-  OnRemovedEffects: []
+  OnRemovedEffects:
+  - {fileID: 11400000, guid: 04e0e35cf12e22b41a98588a8f5c6bbf, type: 2}
+  - {fileID: 11400000, guid: 10cff937b81706a4c8b161696ce84e0d, type: 2}
   OnUpdateEffects:
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
   - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}
+  - {fileID: 11400000, guid: 330c9bbfebae22e4c90a688ed8c691f5, type: 2}

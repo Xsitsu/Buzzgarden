@@ -89,6 +89,7 @@ public class CharacterController : MonoBehaviour
 			{
 				if (tile != null && tile.Flower != null)
 				{
+					tile.Flower.SetParticlesTarget(gameObject);
 					FlowerType flowerType = tile.Flower.flowerType;
 					float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
 					PlayerInventory.Instance.AddPollen(flowerType.Id, harvested);

@@ -14,14 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: teal
   Name: Teal
-  Description: 
+  Description: Turns the tile its planted on into air. It will die if the ground
+    beneath it is restored. Takes pollen from the flower to the left and gives it
+    to the flower on the right.
   FlowerColor: {r: 0.39999998, g: 0.96987283, b: 1, a: 1}
   MaxPollen: 20
-  LifetimePollen: 40
-  PollenGenerationRate: 1
+  LifetimePollen: 1
+  PollenGenerationRate: 0
   RegenTimer: 2
-  OnAddedEffects: []
+  OnAddedEffects:
+  - {fileID: 11400000, guid: f79db8e61a6b60f4da1ca8f0e67ff09d, type: 2}
   OnRemovedEffects: []
   OnUpdateEffects:
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: a16f36ec15f4f194bb512d7f0c8f2c76, type: 2}
+  - {fileID: 11400000, guid: 55778b7691697464ba70f47e9885734b, type: 2}

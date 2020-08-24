@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: white
   Name: White
-  Description: The most basic flower.
+  Description: The most basic flower. Has nos pecial effects.
   FlowerColor: {r: 1, g: 1, b: 1, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
@@ -22,7 +22,7 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects:
-  - {fileID: 11400000, guid: 24d05c30558787e4898c660e1019a670, type: 2}
+  - {fileID: 11400000, guid: 04e0e35cf12e22b41a98588a8f5c6bbf, type: 2}
   OnUpdateEffects:
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
   - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}

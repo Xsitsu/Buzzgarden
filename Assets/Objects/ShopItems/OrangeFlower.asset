@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fd41ef956b5b574cade9d9fd517840e, type: 3}
-  m_Name: PurpleFlower
+  m_Name: OrangeFlower
   m_EditorClassIdentifier: 
-  Flower: {fileID: 11400000, guid: 90f4e420164d71441842b8b7dbac657c, type: 2}
+  Flower: {fileID: 11400000, guid: 29f9ba7d536dbea409c7af4f019be4e3, type: 2}
   Costs:
-  - {fileID: 11400000, guid: 7f8dcc33df0186b468c9d1ddd9e2044a, type: 2}
-  - {fileID: 11400000, guid: 096035df4be9a6e489040f17f308a245, type: 2}
+  - {fileID: 11400000, guid: f182dc93dd2575e48a52d829344daf0b, type: 2}
+  - {fileID: 11400000, guid: f1046d7499dd39242ad750a1077b821b, type: 2}
+  - {fileID: 11400000, guid: 7552a2a5a43df1d498823148c55368e1, type: 2}
