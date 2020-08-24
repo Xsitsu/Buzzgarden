@@ -69,22 +69,13 @@ public class Flower
 
 	public void Update(float step)
 	{
-		if (flowerType.LifetimePollen > TotalPollen)
+		if (_regenTimer > 0)
 		{
-			if (_regenTimer > 0)
-			{
-				_regenTimer -= step;
-			}
-			else
-			{
-				float addPollen = flowerType.PollenGenerationRate * step;
-				float addedPollen = GeneratePollen(addPollen);	
-				TotalPollen += addedPollen;
-			}
+			_regenTimer -= step;
 		}
 		else
 		{
-			pollenBar.SetMaxed();
+			GeneratePollen(flowerType.PollenGenerationRate * step);
 		}
 
 		pollenBar.SetPercentage(CurrentPollen / flowerType.MaxPollen);
@@ -102,7 +93,7 @@ public class Flower
 		return (CurrentPollen >= flowerType.MaxPollen);
 	}
 
-	public float GeneratePollen(float addPollen)
+	public float AddPollen(float addPollen)
 	{
 		float addedPollen = 0;
 		if (!IsFull())
@@ -123,6 +114,23 @@ public class Flower
 			addedPollen = addPollen;
 		}
 		return addedPollen;
+	}
+	public bool IsRegenning()
+	{
+		return (_regenTimer > 0);
+	}
+	public void GeneratePollen(float toGenerate)
+	{
+		if (flowerType.LifetimePollen > TotalPollen)
+		{
+			float addPollen = toGenerate;
+			float addedPollen = AddPollen(addPollen);
+			TotalPollen += addedPollen;
+		}
+		else
+		{
+			pollenBar.SetMaxed();
+		}
 	}
 	public void SetPosition(int x, int y)
 	{

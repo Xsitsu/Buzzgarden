@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flower: {fileID: 11400000, guid: ad556206d92a65143b3d29e84d618e29, type: 2}
   Costs:
-  - {fileID: 11400000, guid: ee7df1bdc0caf4c4ab94f30cbc123a6d, type: 2}
+  - {fileID: 11400000, guid: f182dc93dd2575e48a52d829344daf0b, type: 2}

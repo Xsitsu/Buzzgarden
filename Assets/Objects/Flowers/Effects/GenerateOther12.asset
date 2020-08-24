@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fd41ef956b5b574cade9d9fd517840e, type: 3}
-  m_Name: GreenFlower
+  m_Script: {fileID: 11500000, guid: ff01123179d77d24ab396d496e9b1ad3, type: 3}
+  m_Name: GenerateOther12
   m_EditorClassIdentifier: 
-  Flower: {fileID: 11400000, guid: 8a54fb2ff477adf4bba515d82f824d76, type: 2}
-  Costs:
-  - {fileID: 11400000, guid: f182dc93dd2575e48a52d829344daf0b, type: 2}
+  GenerateForSelf: 0
+  GenerateSpeed: 12
+  Range: 1

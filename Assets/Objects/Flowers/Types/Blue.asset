@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: blue
   Name: Blue
-  Description: Does blue stuff idk lol.
+  Description: Gives adjacent flowers a 2x pollen generation bonus.
   FlowerColor: {r: 0.39999998, g: 0.42391413, b: 1, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
@@ -25,3 +25,4 @@ MonoBehaviour:
   OnUpdateEffects:
   - {fileID: 11400000, guid: c3415889fd1ff4e46970147eb2dbcb63, type: 2}
   - {fileID: 11400000, guid: dc7facf404a39244b8009477eacb8e6e, type: 2}
+  - {fileID: 11400000, guid: b50ea8eeeec94174ab288ff49ccec086, type: 2}

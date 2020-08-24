@@ -26,7 +26,7 @@ public class FlowerEffectVampire : FlowerEffectBase
                             float harvested = t.Flower.TakePollen(DrainSpeed * step);
                             if (harvested > 0)
                             {
-                                tile.Flower.GeneratePollen(harvested);
+                                tile.Flower.AddPollen(harvested);
                             }
                         }
                     }
