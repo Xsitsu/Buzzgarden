@@ -105,7 +105,7 @@ public class Flower
 		{
 			toHarvest = CurrentPollen;
 
-			if (TotalPollen > flowerType.LifetimePollen)
+			if (TotalPollen >= flowerType.LifetimePollen)
 			{
 				this.Destroy();
 			}
