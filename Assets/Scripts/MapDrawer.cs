@@ -95,6 +95,27 @@ public class MapDrawer : MonoBehaviour
 					TilemapFlowerPetals.SetTileFlags(pos, TileFlags.None);
 					TilemapFlowerPetals.SetColor(pos, tile.Flower.flowerType.FlowerColor);
 				}
+
+				if (x == 0)
+				{
+					int index = GrassBordersToIndex(false, false, false, true);
+					TilemapGrass.SetTile(new Vector3Int(pos.x - 1, pos.y, pos.z), TileSet.BorderTiles[index]);
+				}
+				if (x == map.SizeX - 1)
+				{
+					int index = GrassBordersToIndex(false, false, true, false);
+					TilemapGrass.SetTile(new Vector3Int(pos.x + 1, pos.y, pos.z), TileSet.BorderTiles[index]);
+				}
+				if (y == 0)
+				{
+					int index = GrassBordersToIndex(true, false, false, false);
+					TilemapGrass.SetTile(new Vector3Int(pos.x, pos.y - 1, pos.z), TileSet.BorderTiles[index]);
+				}
+				if (y == map.SizeY - 1)
+				{
+					int index = GrassBordersToIndex(false, true, false, false);
+					TilemapGrass.SetTile(new Vector3Int(pos.x, pos.y + 1, pos.z), TileSet.BorderTiles[index]);
+				}
 			}
 		}
 	}
