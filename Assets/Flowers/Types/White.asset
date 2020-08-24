@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f4ec9203692b1488d939b7c09af7c7, type: 3}
   m_Name: White
   m_EditorClassIdentifier: 
+  Id: white
+  Name: White
   FlowerColor: {r: 1, g: 1, b: 1, a: 1}
   MaxPollen: 20
   LifetimePollen: 40

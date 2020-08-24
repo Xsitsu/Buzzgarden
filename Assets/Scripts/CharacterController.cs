@@ -90,7 +90,8 @@ public class CharacterController : MonoBehaviour
 				if (tile != null && tile.Flower != null)
 				{
 					float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
-					PlayerInventory.Instance.AddPollen(harvested);
+					PlayerInventory.Instance.AddPollen(tile.Flower.flowerType.Id, harvested);
+					//tile.Flower.flowerType.PollenCollected += harvested;
 				}
 			}
 		}

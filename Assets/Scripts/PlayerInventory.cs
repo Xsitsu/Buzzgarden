@@ -6,43 +6,40 @@ public class PlayerInventory : MonoBehaviour
 {
 	private static PlayerInventory _instance;
 	public static PlayerInventory Instance { get { return _instance; } }
-
-	float pollen = 0;
-	public int Pollen { get { return (int)Mathf.Floor(pollen); } }
-
-	private Dictionary<string, int> items;
-
+	private Dictionary<string, float> pollen;
 	void Awake()
 	{
 		_instance = this;
 	}
-
 	void Start()
 	{
-		items = new Dictionary<string, int>();
+		pollen = new Dictionary<string, float>();
 	}
-
 	void OnDestroy()
 	{
 		_instance = null;
 	}
-
-	public void AddItem(string id)
+	public void AddPollen(string id, float amount)
 	{
-		int itemCount;
-		items.TryGetValue(id, out itemCount);
-		items[id] = itemCount += 1;
-
-		Debug.Log("Inventory now has " + itemCount + " of '" + id + "'.");
+		float count;
+		pollen.TryGetValue(id, out count);
+		pollen[id] = count + amount;
 	}
-
-	public void AddPollen(float amount)
+	public void SubtractPollen(string id, float amount)
 	{
-		pollen += amount;
+		float count;
+		pollen.TryGetValue(id, out count);
+		float set = count - amount;
+		if (set < 0)
+		{
+			set = 0;
+		}
+		pollen[id] = set;
 	}
-
-	public void SubtractPollen(float amount)
+	public float GetPollen(string id)
 	{
-		pollen -= amount;
+		float count;
+		pollen.TryGetValue(id, out count);
+		return count;
 	}
 }

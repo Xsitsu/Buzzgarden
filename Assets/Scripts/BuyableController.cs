@@ -34,11 +34,13 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
 	public void Buy()
 	{
+		/*
 		if (Inventory.Pollen >= Item.StorePrice)
 		{
 			Inventory.SubtractPollen(Item.StorePrice);
 			FlowerPlacer.Instance.SetFlowerType(Item);
 		}
+		*/
 	}
 
 	public void OnPointerEnter(PointerEventData data)

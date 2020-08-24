@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f4ec9203692b1488d939b7c09af7c7, type: 3}
   m_Name: Purple
   m_EditorClassIdentifier: 
+  Id: purple
+  Name: Purple
   FlowerColor: {r: 0.716111, g: 0.3, b: 1, a: 1}
   MaxPollen: 20
   LifetimePollen: 40

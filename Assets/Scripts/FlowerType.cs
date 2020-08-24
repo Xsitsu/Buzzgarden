@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FlowerType", menuName = "FlowerGame/FlowerType")]
 public class FlowerType : ScriptableObject
 {
+    public string Id;
+    public string Name;
 	public Color FlowerColor;
 	public int MaxPollen;
 	public int LifetimePollen;

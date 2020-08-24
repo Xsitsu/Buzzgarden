@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f4ec9203692b1488d939b7c09af7c7, type: 3}
   m_Name: Orange
   m_EditorClassIdentifier: 
+  Id: orange
+  Name: Orange
   FlowerColor: {r: 1, g: 0.6326313, b: 0.3, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
