@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour
 	void Start()
 	{
 		cam = Camera.main;
+		transform.localPosition = new Vector3(MapHandler.Instance.MapSize.x / 2, MapHandler.Instance.MapSize.y / 2, 0);
 	}
 
 	void Update()

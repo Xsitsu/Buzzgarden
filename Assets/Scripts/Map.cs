@@ -136,6 +136,7 @@ public class Map
 				flower.SetTile(tile);
 				flower.SetPosition(x, y);
 				tile.AddFlower(flower);
+				flower.GeneratePollen(flower.flowerType.MaxPollen / 2);
 				flowers += 1;
 			}
 		}

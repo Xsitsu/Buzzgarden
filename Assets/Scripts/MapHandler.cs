@@ -24,7 +24,7 @@ public class MapHandler : MonoBehaviour
 	void Start()
 	{
 		map = new Map((int)MapSize.x, (int)MapSize.y);
-		map.SeedFlowers(10);
+		map.SeedFlowers(1);
 
 		foreach (FlowerType flower in InitialSpawns)
 		{
