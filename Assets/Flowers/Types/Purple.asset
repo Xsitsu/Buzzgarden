@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: purple
   Name: Purple
+  Description: 
   FlowerColor: {r: 0.716111, g: 0.3, b: 1, a: 1}
-  MaxPollen: 20
-  LifetimePollen: 40
-  PollenGenerationRate: 1
-  RegenTimer: 2
+  MaxPollen: 200
+  LifetimePollen: 1
+  PollenGenerationRate: 0
+  RegenTimer: 0
   OnAddedEffects: []
   OnRemovedEffects: []
-  OnUpdateEffects: []
-  StorePrice: 0
-  StoreName: Purple
+  OnUpdateEffects:
+  - {fileID: 0}

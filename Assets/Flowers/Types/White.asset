@@ -21,7 +21,6 @@ MonoBehaviour:
   PollenGenerationRate: 1
   RegenTimer: 2
   OnAddedEffects: []
-  OnRemovedEffects: []
+  OnRemovedEffects:
+  - {fileID: 11400000, guid: 24d05c30558787e4898c660e1019a670, type: 2}
   OnUpdateEffects: []
-  StorePrice: 0
-  StoreName: White

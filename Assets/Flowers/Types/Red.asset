@@ -23,7 +23,5 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects:
-  - {fileID: 11400000, guid: 24d05c30558787e4898c660e1019a670, type: 2}
+  - {fileID: 11400000, guid: 4b55f22f7fa39ab499d90e0fe89804dc, type: 2}
   OnUpdateEffects: []
-  StorePrice: 0
-  StoreName: Red
