@@ -57,10 +57,12 @@ public class FlowerPlacer : MonoBehaviour
         this.flowerType = flowerType;
         if (flowerType != null)
         {
+            GameUI.Instance.HideShop();
             TileSelector.Instance.Visible = true;
         }
         else
         {
+            GameUI.Instance.ShowShop();
             TileSelector.Instance.Visible = false;
             PetalsRenderer.color = ColorClear;
             DetailRenderer.color = ColorClear;

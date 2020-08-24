@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class GameUI : MonoBehaviour
 {
+	static private GameUI _instance;
+	static public GameUI Instance { get { return _instance; } }
 	public TMPro.TextMeshProUGUI PollenText;
-
+	public GameObject ShopFrame;
+	void Awake()
+	{
+		_instance = this;
+	}
 	void Start()
 	{
 
@@ -33,5 +39,14 @@ public class GameUI : MonoBehaviour
 		{
 			PollenText.text = pollen.ToString();
 		}
+	}
+
+	public void ShowShop()
+	{
+		ShopFrame.SetActive(true);
+	}
+	public void HideShop()
+	{
+		ShopFrame.SetActive(false);
 	}
 }
