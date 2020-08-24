@@ -20,7 +20,8 @@ public class ShopUI : MonoBehaviour
 	{
         ButtonOpen.GetComponent<Button>().onClick.AddListener(OnOpen);
         ButtonClose.GetComponent<Button>().onClick.AddListener(OnClose);
-        OnClose();
+        ShopFrame.SetActive(false);
+        ButtonOpen.SetActive(true);
 
         Hide();
         foreach (Transform child in Buyables.transform)
@@ -97,11 +98,13 @@ public class ShopUI : MonoBehaviour
 	}
     public void OnOpen()
     {
+        SoundManager.Instance.PlaySelectMenu();
         ShopFrame.SetActive(true);
         ButtonOpen.SetActive(false);
     }
     public void OnClose()
     {
+        SoundManager.Instance.PlaySelectMenu();
         ShopFrame.SetActive(false);
         ButtonOpen.SetActive(true);
     }

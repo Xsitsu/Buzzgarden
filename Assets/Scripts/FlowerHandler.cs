@@ -26,8 +26,7 @@ public class FlowerHandler : MonoBehaviour
 	void Start()
 	{
 		Flowers = new List<Flower>();
-		FlowerTransform = new GameObject();
-		FlowerTransform.name = "FlowerTransform";
+		
 	}
 
 	void Update()
@@ -52,6 +51,8 @@ public class FlowerHandler : MonoBehaviour
 	}
 	public GameObject CreateFlowerTransform()
 	{
+		FlowerTransform = new GameObject();
+		FlowerTransform.name = "FlowerTransform";
 		GameObject obj = Instantiate(FlowerTransform);
 		obj.transform.SetParent(transform);
 		return obj;

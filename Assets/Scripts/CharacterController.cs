@@ -95,6 +95,14 @@ public class CharacterController : MonoBehaviour
 					float harvested = tile.Flower.HarvestPollen(PollenHarvestSpeed * Time.deltaTime);
 					PlayerInventory.Instance.AddPollen(flowerType.Id, harvested);
 					//tile.Flower.flowerType.PollenCollected += harvested;
+					if (harvested > 0)
+					{
+						SoundManager.Instance.PlayGetPollen();
+					}
+					else
+					{
+						SoundManager.Instance.StopSound();
+					}
 				}
 			}
 		}

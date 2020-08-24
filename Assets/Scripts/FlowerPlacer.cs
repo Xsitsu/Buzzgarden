@@ -42,6 +42,7 @@ public class FlowerPlacer : MonoBehaviour
                         tile.AddFlower(flower);
                         flower.SetPosition(cell.x, cell.y);
                         SetFlowerType(null);
+                        SoundManager.Instance.PlayPlaceFlower();
                     }
                 }
                 else

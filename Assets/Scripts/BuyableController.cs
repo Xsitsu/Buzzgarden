@@ -45,6 +45,7 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 		{
 			foreach (ShopItemCost cost in item.Costs)
 			{
+				SoundManager.Instance.PlaySelectMenu();
 				PlayerInventory.Instance.SubtractPollen(cost.Flower.Id, cost.Pollen);
 				FlowerPlacer.Instance.SetFlowerType(item.Flower);
 			}
