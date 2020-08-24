@@ -16,6 +16,4 @@ public class FlowerType : ScriptableObject
 	public FlowerEffectBase[] OnAddedEffects;
 	public FlowerEffectBase[] OnRemovedEffects;
     public FlowerEffectBase[] OnUpdateEffects;
-	public int StorePrice;
-	public string StoreName;
 }
