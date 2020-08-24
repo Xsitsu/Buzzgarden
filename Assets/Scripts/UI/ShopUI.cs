@@ -21,6 +21,16 @@ public class ShopUI : MonoBehaviour
         ButtonOpen.GetComponent<Button>().onClick.AddListener(OnOpen);
         ButtonClose.GetComponent<Button>().onClick.AddListener(OnClose);
         OnClose();
+
+        Hide();
+        foreach (Transform child in Buyables.transform)
+        {
+            BuyableController controller = child.GetComponent<BuyableController>();
+            if (controller != null)
+            {
+                controller.Hide();
+            }
+        }
 	}
 
 	void Update()
@@ -33,7 +43,12 @@ public class ShopUI : MonoBehaviour
             {
                 if (controller.item != null)
                 {
-                    bool canSee = true;
+                    bool canSee = false;
+                    if (controller.CanBuy())
+                    {
+                        canSee = true;
+                    }
+                    /*
                     foreach (ShopItemCost cost in controller.item.Costs)
                     {
                         if (PlayerInventory.Instance.GetPollen(cost.Flower.Id) == 0)
@@ -41,6 +56,7 @@ public class ShopUI : MonoBehaviour
                             canSee = false;
                         }
                     }
+                    */
                     if (canSee)
                     {
                         controller.Show();
@@ -48,7 +64,7 @@ public class ShopUI : MonoBehaviour
                     }
                     else
                     {
-                        controller.Hide();
+                        //controller.Hide();
                     }
                 }
             }
@@ -60,7 +76,7 @@ public class ShopUI : MonoBehaviour
         }
         else
         {
-            Hide();
+            //Hide();
         }
 	}
     public void Enable()
