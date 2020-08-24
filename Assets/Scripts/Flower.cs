@@ -43,7 +43,7 @@ public class Flower
 		this.tile = tile;
 		foreach (IFlowerEffect effect in flowerType.OnAddedEffects)
 		{
-			effect.Apply(tile);
+			effect.Apply(tile, 0);
 		}
 	}
 	public void RemoveFromTile(MapTile tile)
@@ -51,7 +51,7 @@ public class Flower
 		this.tile = null;
 		foreach (IFlowerEffect effect in flowerType.OnRemovedEffects)
 		{
-			effect.Apply(tile);
+			effect.Apply(tile, 0);
 		}
 	}
 	public void SetTile(MapTile tile)
@@ -91,6 +91,11 @@ public class Flower
 		}
 
 		pollenBar.SetPercentage(CurrentPollen / flowerType.MaxPollen);
+
+		foreach (IFlowerEffect effect in flowerType.OnUpdateEffects)
+		{
+			effect.Apply(tile, step);
+		}
 	}
 
 	public void SetPosition(int x, int y)

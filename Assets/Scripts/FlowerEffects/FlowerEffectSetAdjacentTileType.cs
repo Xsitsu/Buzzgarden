@@ -6,7 +6,7 @@ using UnityEngine;
 public class FlowerEffectSetAdjacentTileType : FlowerEffectBase
 {
     public MapTile.TileType Type;
-    public override void Apply(MapTile tile)
+    public override void Apply(MapTile tile, float step)
     {
         List<MapTile> tiles = MapHandler.Instance.Map.GetAdjacent(tile);
         foreach (MapTile t in tiles)

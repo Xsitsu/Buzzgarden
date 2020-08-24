@@ -6,7 +6,7 @@ using UnityEngine;
 public class FlowerEffectSetTileType : FlowerEffectBase
 {
     public MapTile.TileType Type;
-    public override void Apply(MapTile tile)
+    public override void Apply(MapTile tile, float step)
     {
         tile.Type = this.Type;
     }

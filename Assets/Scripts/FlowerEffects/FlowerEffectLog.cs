@@ -6,7 +6,7 @@ using UnityEngine;
 public class FlowerEffectLog : FlowerEffectBase
 {
 	public string Message;
-	public override void Apply(MapTile tile)
+	public override void Apply(MapTile tile, float step)
 	{
 		Debug.Log(Message);
 	}
