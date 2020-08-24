@@ -539,22 +539,22 @@ PrefabInstance:
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -464
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
@@ -564,7 +564,7 @@ PrefabInstance:
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
@@ -574,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
@@ -589,13 +589,19 @@ PrefabInstance:
     - target: {fileID: 5546064783367020410, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_Name
-      value: PollenDisplay (4)
+      value: PollenTeal
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020410, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 79bdbd5eecb7f0441a1da8d0ae913a95,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410df97321fd86c41824e7d728dd3ea1, type: 3}
 --- !u!224 &786889444362576214 stripped
@@ -942,22 +948,22 @@ PrefabInstance:
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -332
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
@@ -967,7 +973,7 @@ PrefabInstance:
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
@@ -977,7 +983,7 @@ PrefabInstance:
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020293, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
@@ -992,13 +998,19 @@ PrefabInstance:
     - target: {fileID: 5546064783367020410, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_Name
-      value: PollenDisplay (3)
+      value: PollenOrange
       objectReference: {fileID: 0}
     - target: {fileID: 5546064783367020410, guid: 410df97321fd86c41824e7d728dd3ea1,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5947058605811800526, guid: 410df97321fd86c41824e7d728dd3ea1,
+        type: 3}
+      propertyPath: flowerType
+      value: 
+      objectReference: {fileID: 11400000, guid: 29f9ba7d536dbea409c7af4f019be4e3,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410df97321fd86c41824e7d728dd3ea1, type: 3}
 --- !u!224 &3033532113542854522 stripped
