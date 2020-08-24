@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlowerColor: {r: 0.4224145, g: 1, b: 0.39999998, a: 1}
   MaxPollen: 40
-  LifetimePollen: 80
+  LifetimePollen: 8
   PollenGenerationRate: 2
   RegenTimer: 6
   OnAddedEffects: []
-  OnRemovedEffects: []
+  OnRemovedEffects:
+  - {fileID: 11400000, guid: 19b350539e0a56a459d82f9616acff2f, type: 2}
   StorePrice: 10
   StoreName: Green

@@ -36,7 +36,6 @@ public class Flower
 		if (tile != null)
 		{
 			tile.RemoveFlower();
-			tile = null;
 		}
 	}
 	public void AddToTile(MapTile tile)
@@ -68,9 +67,15 @@ public class Flower
 			{
 				_regenTimer -= step;
 			}
-			else
+			else if (CurrentPollen < flowerType.MaxPollen)
 			{
 				float addPollen = flowerType.PollenGenerationRate * step;
+				float diff = flowerType.MaxPollen - CurrentPollen;
+				if (addPollen > diff)
+				{
+					addPollen = diff;
+				}
+
 				CurrentPollen += addPollen;
 				TotalPollen += addPollen;
 

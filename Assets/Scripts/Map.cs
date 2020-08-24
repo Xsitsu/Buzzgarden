@@ -76,7 +76,17 @@ public class Map
 	{
 		return GetTile(cell.x, cell.y);
 	}
-
+	public List<MapTile> GetAdjacent(MapTile tile)
+	{
+		int x = (int)tile.Coordinates.x;
+		int y = (int)tile.Coordinates.y;
+		List<MapTile> tiles = new List<MapTile>();
+		tiles.Add(GetTile(x - 1, y));
+		tiles.Add(GetTile(x + 1, y));
+		tiles.Add(GetTile(x, y - 1));
+		tiles.Add(GetTile(x, y + 1));
+		return tiles;
+	}
 	public List<Flower> GetFlowers()
 	{
 		List<Flower> flowers = new List<Flower>();

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 555716592070740148}
   - component: {fileID: 944242658112141199}
   m_Layer: 0
-  m_Name: FlowerHandler 1
+  m_Name: FlowerHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
