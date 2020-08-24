@@ -13,7 +13,7 @@ public class Flower
 	PollenBar pollenBar;
 	public GameObject flowerTransform { get; private set; }
 	bool isDead = false;
-
+	public int RangeBonus = 0;
 	public Flower()
 	{
 		CurrentPollen = 0;

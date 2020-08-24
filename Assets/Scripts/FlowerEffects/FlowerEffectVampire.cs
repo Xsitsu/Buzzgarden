@@ -11,14 +11,14 @@ public class FlowerEffectVampire : FlowerEffectBase
     public int Range;
     public override void Apply(MapTile tile, float step)
     {
-        List<MapTile> tiles = MapHandler.Instance.Map.GetInRange(tile, Range);
+        List<MapTile> tiles = MapHandler.Instance.Map.GetInRange(tile, Range + tile.Flower.RangeBonus);
         foreach (MapTile t in tiles)
         {
             if (!tile.Flower.IsFull())
             {
                 if (t != tile)
                 {
-                    if (t.Flower != null && t.Flower.flowerType != tile.Flower.flowerType)
+                    if (t.Flower != null && t.Flower.flowerType.PollenGenerationRate > 0)
                     {
                         if (t.Flower.CurrentPollen > 0)
                         {

@@ -12,7 +12,7 @@ public class FlowerEffectGeneratePollen : FlowerEffectBase
     public int Range;
     public override void Apply(MapTile tile, float step)
     {
-        List<MapTile> tiles = MapHandler.Instance.Map.GetInRange(tile, Range);
+        List<MapTile> tiles = MapHandler.Instance.Map.GetInRange(tile, Range + tile.Flower.RangeBonus);
         foreach (MapTile t in tiles)
         {
             if (GenerateForSelf || t != tile)
