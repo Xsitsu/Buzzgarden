@@ -13,6 +13,7 @@ public class TileSelector : MonoBehaviour
 	public Tilemap tilemap;
 	public Tile selectionTile;
 	public Vector3Int SelectedCell { get; private set; }
+	public bool Visible = true;
 	Camera cam;
 	Plane groundPlane;
 
@@ -40,9 +41,12 @@ public class TileSelector : MonoBehaviour
 			tilemap.SetTile(SelectedCell, null);
 			SelectedCell = cell;
 
-			if (mapHandler.ContainsCell(cell))
+			if (true || mapHandler.ContainsCell(cell))
 			{
-				tilemap.SetTile(cell, selectionTile);
+				if (Visible)
+				{
+					tilemap.SetTile(cell, selectionTile);
+				}
 			}
 		}
 		//Vector3 localCoord = grid.WorldToLocal(worldCoord);

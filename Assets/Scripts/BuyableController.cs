@@ -37,6 +37,7 @@ public class BuyableController : MonoBehaviour, IPointerEnterHandler, IPointerEx
 		if (Inventory.Pollen >= Item.StorePrice)
 		{
 			Inventory.SubtractPollen(Item.StorePrice);
+			FlowerPlacer.Instance.SetFlowerType(Item);
 		}
 	}
 
