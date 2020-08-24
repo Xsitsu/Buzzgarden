@@ -22,30 +22,31 @@ public class CharacterController : MonoBehaviour
 	void Update()
 	{
 		Vector3 vel = new Vector3();
-		if (Input.GetKeyDown("a"))
-		{
-			gameObject.GetComponent<SpriteRenderer>().flipX = false;
-		}
-		else if (Input.GetKeyDown("d"))
-		{
-			gameObject.GetComponent<SpriteRenderer>().flipX = true;
-		}
 
-		if (Input.GetKey("w"))
+		if (Input.GetKey("w") || Input.GetKey("up"))
 		{
 			vel.y += 1;
 		}
-		if (Input.GetKey("s"))
+		if (Input.GetKey("s") || Input.GetKey("down"))
 		{
 			vel.y -= 1;
 		}
-		if (Input.GetKey("a"))
+		if (Input.GetKey("a") || Input.GetKey("left"))
 		{
 			vel.x -= 1;
 		}
-		if (Input.GetKey("d"))
+		if (Input.GetKey("d") || Input.GetKey("right"))
 		{
 			vel.x += 1;
+		}
+
+		if (vel.x > 0)
+		{
+			gameObject.GetComponent<SpriteRenderer>().flipX = true;
+		}
+		else if (vel.x < 0)
+		{
+			gameObject.GetComponent<SpriteRenderer>().flipX = false;
 		}
 
 		Transform transform = GetComponent<Transform>();
