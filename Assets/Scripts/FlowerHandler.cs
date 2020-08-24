@@ -10,6 +10,7 @@ public class FlowerHandler : MonoBehaviour
 	public GameObject PollenParticles;
 	public GameObject PollenTarget;
 	public FlowerType DefaultFlowerType;
+	GameObject FlowerTransform;
 	List<Flower> Flowers;
 
 	void Awake()
@@ -25,6 +26,8 @@ public class FlowerHandler : MonoBehaviour
 	void Start()
 	{
 		Flowers = new List<Flower>();
+		FlowerTransform = new GameObject();
+		FlowerTransform.name = "FlowerTransform";
 	}
 
 	void Update()
@@ -38,17 +41,21 @@ public class FlowerHandler : MonoBehaviour
 		bar.transform.SetParent(transform);
 		return bar.GetComponent<PollenBar>();
 	}
-
 	public ParticleSystem CreatePollenParticles()
 	{
 		GameObject emitter = Instantiate(PollenParticles);
 		emitter.transform.SetParent(transform);
 
-		emitter.GetComponent<ParticleController>().Player = PollenTarget;
+		emitter.GetComponent<ParticleController>().SetTarget(PollenTarget);
 
 		return emitter.GetComponent<ParticleSystem>();
 	}
-
+	public GameObject CreateFlowerTransform()
+	{
+		GameObject obj = Instantiate(FlowerTransform);
+		obj.transform.SetParent(transform);
+		return obj;
+	}
 	public Flower CreateFlower(FlowerType flowerType = null)
 	{
 		Flower flower = new Flower();

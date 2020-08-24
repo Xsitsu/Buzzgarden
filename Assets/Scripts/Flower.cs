@@ -11,6 +11,7 @@ public class Flower
 	public ParticleSystem pollenParticles;
 	MapTile tile;
 	PollenBar pollenBar;
+	GameObject flowerTransform;
 
 	public Flower()
 	{
@@ -20,6 +21,7 @@ public class Flower
 
 		pollenBar = FlowerHandler.Instance.CreatePollenBar();
 		pollenParticles = FlowerHandler.Instance.CreatePollenParticles();
+		flowerTransform = FlowerHandler.Instance.CreateFlowerTransform();
 	}
 	public void Destroy()
 	{
@@ -31,6 +33,11 @@ public class Flower
 		if (pollenParticles != null)
 		{
 			Object.Destroy(pollenParticles.gameObject);
+		}
+
+		if (flowerTransform != null)
+		{
+			Object.Destroy(flowerTransform);
 		}
 
 		if (tile != null)
@@ -102,6 +109,7 @@ public class Flower
 	{
 		pollenBar.transform.position = new Vector3(x, y, 0);
 		pollenParticles.transform.position = new Vector3(x + 0.5f, y + 0.5f, 0);
+		flowerTransform.transform.position = new Vector3(x + 0.5f, y + 0.5f, 0);
 	}
 
 	public float HarvestPollen(float toHarvest)
@@ -131,5 +139,10 @@ public class Flower
 		_regenTimer = flowerType.RegenTimer;
 
 		return toHarvest;
+	}
+
+	public void SetParticlesTarget(GameObject target)
+	{
+		pollenParticles.GetComponent<ParticleController>().SetTarget(target);
 	}
 }
