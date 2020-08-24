@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f4ec9203692b1488d939b7c09af7c7, type: 3}
-  m_Name: Yellow
+  m_Name: Red
   m_EditorClassIdentifier: 
-  FlowerColor: {r: 0.94314045, g: 1, b: 0.40099996, a: 1}
+  FlowerColor: {r: 1, g: 0.296, b: 0.30971846, a: 1}
   MaxPollen: 20
   LifetimePollen: 40
   PollenGenerationRate: 1
   RegenTimer: 2
   OnAddedEffects: []
-  OnRemovedEffects: []
+  OnRemovedEffects:
+  - {fileID: 11400000, guid: 24d05c30558787e4898c660e1019a670, type: 2}
