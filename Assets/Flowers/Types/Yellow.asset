@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FlowerColor: {r: 0.94314045, g: 1, b: 0.40099996, a: 1}
   MaxPollen: 20
-  LifetimePollen: 25
+  LifetimePollen: 40
   PollenGenerationRate: 1
   RegenTimer: 2
   OnAddedEffects:
   - {fileID: 11400000, guid: a8db90f43fade134cb2a8e8acf884886, type: 2}
-  - {fileID: 11400000, guid: 88ed8c6a17f4e2142adb443559faa1f8, type: 2}
   OnRemovedEffects:
   - {fileID: 11400000, guid: 28d6da6453d16b742b15475cc0d06d52, type: 2}
