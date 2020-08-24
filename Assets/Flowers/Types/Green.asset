@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: green
   Name: Green
+  Description: A green flower. It turns surrounding tiles to grass when it dies.
   FlowerColor: {r: 0.4224145, g: 1, b: 0.39999998, a: 1}
   MaxPollen: 20
   LifetimePollen: 40

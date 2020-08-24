@@ -7,6 +7,7 @@ public class FlowerType : ScriptableObject
 {
     public string Id;
     public string Name;
+    public string Description;
 	public Color FlowerColor;
 	public int MaxPollen;
 	public int LifetimePollen;

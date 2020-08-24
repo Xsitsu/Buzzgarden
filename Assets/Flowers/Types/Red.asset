@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: red
   Name: Red
+  Description: Generates a lot of pollen, but turns surounding tiles to dirt when
+    it dies.
   FlowerColor: {r: 1, g: 0.296, b: 0.30971846, a: 1}
   MaxPollen: 20
   LifetimePollen: 40

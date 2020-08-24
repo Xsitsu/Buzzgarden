@@ -22,40 +22,31 @@ public class PollenDisplay : MonoBehaviour
 
 	void Update()
 	{
-        if (flowerType == null)
-        {
-            Hide();
-            return;
-        }
 
-        int pollen = GetPollenAmount();
-        if (pollen > 0)
+	}
+
+    public void DisplayPollen(int pollen)
+    {
+        if (pollen >= 1000000)
         {
-            if (pollen >= 1000000)
-            {
-                float num = ((float)(pollen / 100000)) / 10;
-                PollenText.text = num.ToString() + "M";
-            }
-            else if (pollen >= 10000)
-            {
-                float num = ((float)(pollen / 1000));
-                PollenText.text = num.ToString() + "K";
-            }
-            else if (pollen >= 1000)
-            {
-                float num = ((float)(pollen / 100)) / 10;
-                PollenText.text = num.ToString() + "K";
-            }
-            else
-            {
-                PollenText.text = pollen.ToString();
-            }
+            float num = ((float)(pollen / 100000)) / 10;
+            PollenText.text = num.ToString() + "M";
+        }
+        else if (pollen >= 10000)
+        {
+            float num = ((float)(pollen / 1000));
+            PollenText.text = num.ToString() + "K";
+        }
+        else if (pollen >= 1000)
+        {
+            float num = ((float)(pollen / 100)) / 10;
+            PollenText.text = num.ToString() + "K";
         }
         else
         {
-            Hide();
+            PollenText.text = pollen.ToString();
         }
-	}
+    }
     public int GetPollenAmount()
     {
         if (flowerType != null)

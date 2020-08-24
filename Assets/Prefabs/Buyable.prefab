@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7614484471433877793}
   - component: {fileID: 4765032228113841961}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 687599761590232711}
   - component: {fileID: 4586549020361621189}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: Petals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,10 +298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deae0face3a98d542a8cd2ad743c162e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
+  item: {fileID: 0}
   TileSet: {fileID: 11400000, guid: c120d0bb319b23e409a418f9327198a8, type: 2}
-  Inventory: {fileID: 4594934299490306393, guid: d12cd433c75153d4f8782e91fc6c7530,
-    type: 3}
+  NameLabel: {fileID: 250385281133655186}
+  PetalsImage: {fileID: 1091393977440788468}
+  DescriptionText: {fileID: 0}
   ItemTextTarget: {fileID: 0}
   ItemPriceTarget: {fileID: 0}
 --- !u!1 &7746853158347183376
@@ -316,7 +317,7 @@ GameObject:
   - component: {fileID: 2212477420966969}
   - component: {fileID: 226966665836824589}
   m_Layer: 5
-  m_Name: SpriteDetail
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

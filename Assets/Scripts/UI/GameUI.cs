@@ -24,9 +24,22 @@ public class GameUI : MonoBehaviour
 			PollenDisplay display = child.GetComponent<PollenDisplay>();
 			if (display)
 			{
-				if (display.GetPollenAmount() > 0)
+				if (display.flowerType != null)
 				{
-					display.Show();
+					int pollen = (int)PlayerInventory.Instance.GetPollen(display.flowerType.Id);
+					if (pollen > 0)
+					{
+						display.Show();
+						display.DisplayPollen(pollen);
+					}
+					else
+					{
+						display.Hide();
+					}
+				}
+				else
+				{
+					display.Hide();
 				}
 			}
 		}
@@ -34,10 +47,10 @@ public class GameUI : MonoBehaviour
 
 	public void ShowShop()
 	{
-		ShopFrame.SetActive(true);
+		ShopUI.Instance.Enable();
 	}
 	public void HideShop()
 	{
-		ShopFrame.SetActive(false);
+		ShopUI.Instance.Disable();
 	}
 }
