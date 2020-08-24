@@ -19,3 +19,6 @@ MonoBehaviour:
   RegenTimer: 2
   OnAddedEffects: []
   OnRemovedEffects: []
+  OnUpdateEffects: []
+  StorePrice: 0
+  StoreName: Purple
