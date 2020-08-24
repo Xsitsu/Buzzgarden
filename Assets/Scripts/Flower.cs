@@ -6,7 +6,7 @@ public class Flower
 {
 	public FlowerType flowerType;
 	public float CurrentPollen { get; private set; }
-	public float TotalPollen { get ; private set; }
+	public float TotalPollen { get; private set; }
 	float _regenTimer;
 	public ParticleSystem pollenParticles;
 	MapTile tile;
@@ -116,6 +116,9 @@ public class Flower
 
 		if (CurrentPollen > 0)
 		{
+			var particleMain = pollenParticles.main;
+			particleMain.startColor = flowerType.FlowerColor;
+
 			//emitCounter = 0;
 			pollenParticles.Emit(1);
 		}

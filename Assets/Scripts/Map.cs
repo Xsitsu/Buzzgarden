@@ -16,10 +16,9 @@ public class Map
 		Tiles = new MapTile[size_x, size_y];
 
 		System.Random rand = new System.Random();
-		Flower flower;
 		MapTile tile;
 
-		//temp
+		// Generate grass
 		for (int x = 0; x < size_x; x++)
 		{
 			for (int y = 0; y < size_y; y++)
@@ -27,28 +26,22 @@ public class Map
 				tile = new MapTile(new Vector2(x, y));
 				tile.Type = MapTile.TileType.Grass;
 				Tiles[x, y] = tile;
-
-				int val = rand.Next(1, 100);
-				if (val <= 1)
-				{
-					flower = FlowerHandler.Instance.CreateFlower();
-					flower.SetTile(tile);
-					flower.SetPosition(x, y);
-					tile.AddFlower(flower);
-				}
-				else if (val <= 44)
-				{
-					tile.Type = MapTile.TileType.Dirt;
-				}
 			}
 		}
 
-		tile = Tiles[SizeX / 2, SizeY / 2];
-		flower = FlowerHandler.Instance.CreateFlower();
-		flower.SetTile(tile);
-		flower.SetPosition(SizeX / 2, SizeY / 2);
-		tile.Type = MapTile.TileType.Grass;
-		tile.AddFlower(flower);
+		// Generate starting dirt
+		for (int dirt = 0; dirt < (SizeX * SizeY) / 2;)
+		{
+			var x = rand.Next(0, SizeX);
+			var y = rand.Next(0, SizeY);
+
+			tile = Tiles[x, y];
+			if (tile.Type == MapTile.TileType.Grass)
+			{
+				tile.Type = MapTile.TileType.Dirt;
+				dirt += 1;
+			}
+		}
 	}
 
 	// Not a MonoBehavior class, so Update must be public so that it can be called elsewhere.
@@ -98,5 +91,26 @@ public class Map
 			}
 		}
 		return flowers;
+	}
+	public void SeedFlowers(int amount, FlowerType type = null)
+	{
+		System.Random rand = new System.Random();
+
+		// Generate starting default flowers
+		for (int flowers = 0; flowers < amount;)
+		{
+			var x = rand.Next(0, SizeX);
+			var y = rand.Next(0, SizeY);
+
+			var tile = GetTile(x, y);
+			if (tile.Type == MapTile.TileType.Grass && tile.Flower == null)
+			{
+				var flower = FlowerHandler.Instance.CreateFlower(type);
+				flower.SetTile(tile);
+				flower.SetPosition(x, y);
+				tile.AddFlower(flower);
+				flowers += 1;
+			}
+		}
 	}
 }

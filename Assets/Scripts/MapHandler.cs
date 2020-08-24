@@ -5,10 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(MapDrawer))]
 public class MapHandler : MonoBehaviour
 {
+	public List<FlowerType> InitialSpawns;
+
 	static private MapHandler _instance;
 	static public MapHandler Instance { get { return _instance; } }
 	public Vector2 MapSize;
 	public Map Map { get { return map; } }
+	public
 	Map map;
 	MapDrawer mapDrawer;
 	Rect mapRect;
@@ -21,10 +24,16 @@ public class MapHandler : MonoBehaviour
 	void Start()
 	{
 		map = new Map((int)MapSize.x, (int)MapSize.y);
-		mapDrawer = GetComponent<MapDrawer>();
+		map.SeedFlowers(10);
+
+		foreach (FlowerType flower in InitialSpawns)
+		{
+			map.SeedFlowers(2, flower);
+		}
 
 		mapRect = new Rect(0, 0, MapSize.x, MapSize.y);
 
+		mapDrawer = GetComponent<MapDrawer>();
 		mapDrawer.DrawMap(map);
 	}
 
