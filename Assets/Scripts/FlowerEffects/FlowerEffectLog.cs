@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FlowerEffectLog", menuName = "FlowerGame/FlowerEffect/Log")]
 public class FlowerEffectLog : FlowerEffectBase
 {
-    public string Message;
-    public override void Apply(MapTile tile)
-    {
-        Debug.Log(Message);
-    }
+	public string Message;
+	public override void Apply(MapTile tile)
+	{
+		Debug.Log(Message);
+	}
 }

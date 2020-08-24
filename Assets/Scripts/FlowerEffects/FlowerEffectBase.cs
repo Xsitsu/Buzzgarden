@@ -4,5 +4,5 @@ using UnityEngine;
 
 public abstract class FlowerEffectBase : ScriptableObject, IFlowerEffect
 {
-    public abstract void Apply(MapTile tile);
+	public abstract void Apply(MapTile tile);
 }

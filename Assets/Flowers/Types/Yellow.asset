@@ -22,3 +22,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88ed8c6a17f4e2142adb443559faa1f8, type: 2}
   OnRemovedEffects:
   - {fileID: 11400000, guid: 28d6da6453d16b742b15475cc0d06d52, type: 2}
+  StorePrice: 10
+  StoreName: Yellow
