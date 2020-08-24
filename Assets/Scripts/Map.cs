@@ -78,6 +78,8 @@ public class Map
 		tiles.Add(GetTile(x + 1, y));
 		tiles.Add(GetTile(x, y - 1));
 		tiles.Add(GetTile(x, y + 1));
+
+		tiles.RemoveAll(t => t == null);
 		return tiles;
 	}
 	public List<Flower> GetFlowers()
